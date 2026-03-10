@@ -22,6 +22,8 @@
 &nbsp;
 <a href="https://react.dev"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="36" alt="React"/></a>
 &nbsp;
+<a href="https://svelte.dev"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" height="36" alt="Svelte"/></a>
+&nbsp;
 <a href="https://nodejs.org"><img src="https://skillicons.dev/icons?i=nodejs" height="36" alt="Node.js"/></a>
 &nbsp;
 <a href="https://www.java.com"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="36" alt="Java"/></a>
