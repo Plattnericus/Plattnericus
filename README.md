@@ -2,7 +2,7 @@
 
 <img src="icons/wave-top.svg" width="100%"/>
 
-# Hello there! <img src="icons/wave.avif" height="36" alt="wave">
+<h1 align="center">Hello there! <img src="icons/wave.avif" height="46" alt="wave"></h1>
 
 **`Turning ideas into reliable software.`**
 
