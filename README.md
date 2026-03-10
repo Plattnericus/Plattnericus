@@ -4,15 +4,25 @@
 
 # Nexor
 
-**`Turning complex problems into elegant solutions.`**
+**`Engineering solutions. Crafting experiences. Mastering networks.`**
 
-*Building at the intersection of performance and precision.*
+*From low-level systems to high-level interfaces — built with precision.*
 
 ---
 
 ### Tech Stack
 
 <a href="https://www.linux.org"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="36" alt="Linux"/></a>
+&nbsp;
+<a href="https://www.cisco.com"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" height="36" alt="Cisco"/></a>
+&nbsp;
+<a href="https://www.arduino.cc"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" height="36" alt="Arduino"/></a>
+&nbsp;
+<a href="https://www.java.com"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="36" alt="Java"/></a>
+&nbsp;
+<a href="https://kotlinlang.org"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" height="36" alt="Kotlin"/></a>
+&nbsp;
+<a href="https://learn.microsoft.com/en-us/dotnet/csharp/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="36" alt="C#"/></a>
 &nbsp;
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="36" alt="HTML"/></a>
 &nbsp;
@@ -26,15 +36,9 @@
 &nbsp;
 <a href="https://nodejs.org"><img src="https://skillicons.dev/icons?i=nodejs" height="36" alt="Node.js"/></a>
 &nbsp;
-<a href="https://www.java.com"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="36" alt="Java"/></a>
-&nbsp;
-<a href="https://learn.microsoft.com/en-us/dotnet/csharp/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="36" alt="C#"/></a>
-&nbsp;
 <a href="https://www.mysql.com"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="36" alt="MySQL"/></a>
 &nbsp;
 <a href="https://www.postgresql.org"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="36" alt="PostgreSQL"/></a>
-&nbsp;
-<a href="https://www.arduino.cc"><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" height="36" alt="Arduino"/></a>
 
 ---
 
