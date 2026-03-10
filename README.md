@@ -2,7 +2,7 @@
 
 <img src="icons/wave-top.svg" width="100%"/>
 
-# Nexor
+# Hello there! <img src="icons/wave.avif" height="36" alt="wave">
 
 **`Turning ideas into reliable software.`**
 
