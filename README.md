@@ -6,7 +6,7 @@
 
 **`Turning ideas into reliable software.`**
 
-*Turning ideas into reliable software — from low-level systems to high-level interfaces.*
+*From low-level systems to high-level interfaces.*
 
 ---
 
