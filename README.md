@@ -4,9 +4,9 @@
 
 # Nexor
 
-**`Engineering solutions. Crafting experiences. Mastering networks.`**
+**`Turning ideas into reliable software.`**
 
-*From low-level systems to high-level interfaces — built with precision.*
+*Turning ideas into reliable software — from low-level systems to high-level interfaces.*
 
 ---
 
