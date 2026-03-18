@@ -39,6 +39,8 @@
 <a href="https://www.mysql.com"><img src="icons/mysql.svg" height="36" alt="MySQL"/></a>
 &nbsp;
 <a href="https://www.postgresql.org"><img src="icons/postgresql.svg" height="36" alt="PostgreSQL"/></a>
+&nbsp;
+<a href="https://www.autodesk.com/de/products/inventor/overview"><img src="icons/inventor.svg" height="36" alt="Inventor"/></a>
 
 ---
 
