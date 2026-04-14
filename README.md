@@ -20,8 +20,6 @@
 &nbsp;
 <a href="https://www.java.com"><img src="icons/java.svg" height="36" alt="Java"/></a>
 &nbsp;
-<a href="https://kotlinlang.org"><img src="icons/kotlin.svg" height="36" alt="Kotlin"/></a>
-&nbsp;
 <a href="https://learn.microsoft.com/en-us/dotnet/csharp/"><img src="icons/csharp.svg" height="36" alt="C#"/></a>
 &nbsp;
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="icons/html.svg" height="36" alt="HTML"/></a>
