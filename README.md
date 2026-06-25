@@ -20,13 +20,13 @@
 &nbsp;
 <a href="https://learn.microsoft.com/en-us/dotnet/csharp/"><img src="icons/csharp.svg" height="36" alt="C#"/></a>
 &nbsp;
-<a href="https://en.cppreference.com/w/c"><img src="icons/c.svg" height="36" alt="C"/></a>
+<a href="https://en.cppreference.com/w/c"><img src="icons/c.png" height="36" alt="C"/></a>
 &nbsp;
-<a href="https://en.cppreference.com/w/cpp"><img src="icons/cpp.svg" height="36" alt="C++"/></a>
+<a href="https://en.cppreference.com/w/cpp"><img src="icons/cplusplus.png" height="36" alt="C++"/></a>
 &nbsp;
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="icons/js.svg" height="36" alt="JavaScript"/></a>
 &nbsp;
-<a href="https://www.typescriptlang.org"><img src="icons/typescript.svg" height="36" alt="TypeScript"/></a>
+<a href="https://www.typescriptlang.org"><img src="icons/typescript.png" height="36" alt="TypeScript"/></a>
 </div>
 <br>
 </details>
