@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1320,100:2b4f81&height=180&section=header&text=Plattnericus&fontColor=e6edf3&fontSize=52&animation=fadeIn&fontAlignY=38" width="100%"/>
 
-<img src="https://github.com/Plattnericus.png" width="120" height="120" alt="Plattnericus"/>
+<img src="https://wsrv.nl/?url=github.com/Plattnericus.png&w=200&h=200&fit=cover&mask=circle" width="170" alt="Plattnericus"/>
 
 ### `Nexor` · turning ideas into reliable software
 
