@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="icons/banner.svg" width="100%" alt="Plattnericus — turning ideas into reliable software"/>
+<img src="https://cdn.jsdelivr.net/gh/Plattnericus/Plattnericus@main/icons/banner.svg" width="100%" alt="Plattnericus — turning ideas into reliable software"/>
 
 <br>
 
@@ -111,7 +111,7 @@
 
 <br><br>
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Plattnericus&hide_border=true&background=00000000&stroke=2b4f81&ring=4a7fc4&fire=6ea8ff&currStreakLabel=8b949e&sideLabels=8b949e&dates=8b949e&currStreakNum=e6edf3&sideNums=e6edf3" height="160"/>
+<img src="https://streak-stats.demolab.com/?user=Plattnericus&hide_border=true&background=00000000&stroke=2b4f81&ring=4a7fc4&fire=6ea8ff&currStreakLabel=8b949e&sideLabels=8b949e&dates=8b949e&currStreakNum=e6edf3&sideNums=e6edf3" height="160"/>
 
 <br><br>
 
@@ -122,5 +122,5 @@
 ---
 
 <div align="center">
-<img src="icons/footer.svg" width="100%" alt="footer"/>
+<img src="https://cdn.jsdelivr.net/gh/Plattnericus/Plattnericus@main/icons/footer.svg" width="100%" alt="footer"/>
 </div>
