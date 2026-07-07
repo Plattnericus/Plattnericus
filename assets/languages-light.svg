@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="190" viewBox="0 0 1200 190" role="img">
+  <style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Arial, sans-serif; letter-spacing: 0; text-rendering: geometricPrecision; }
+  .draw { stroke-dasharray: 1200; animation: draw 1.4s cubic-bezier(.2, .8, .2, 1) forwards; }
+  .pulse { animation: pulse 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .point { animation: point .42s cubic-bezier(.2, .8, .2, 1) both; }
+  .rot-0 { animation: rot0 12s ease-in-out infinite; }
+  .rot-1 { opacity: 0; animation: rot1 12s ease-in-out infinite; }
+  .rot-2 { opacity: 0; animation: rot2 12s ease-in-out infinite; }
+  .rot-3 { opacity: 0; animation: rot3 12s ease-in-out infinite; }
+  .status-line { stroke-dasharray: 92; animation: draw 1.5s .25s cubic-bezier(.2, .8, .2, 1) forwards; }
+  @keyframes draw { from { stroke-dashoffset: 1200; } to { stroke-dashoffset: 0; } }
+  @keyframes pulse { 0%, 100% { transform: scale(.94); } 50% { transform: scale(1.04); } }
+  @keyframes point { from { transform: translateY(4px) scale(.9); } to { transform: translateY(0) scale(1); } }
+  @keyframes rot0 { 0%, 20% { opacity: 1; transform: translateY(0); } 25%, 95% { opacity: 0; transform: translateY(-6px); } 100% { opacity: 1; transform: translateY(0); } }
+  @keyframes rot1 { 0%, 20% { opacity: 0; transform: translateY(6px); } 25%, 45% { opacity: 1; transform: translateY(0); } 50%, 100% { opacity: 0; transform: translateY(-6px); } }
+  @keyframes rot2 { 0%, 45% { opacity: 0; transform: translateY(6px); } 50%, 70% { opacity: 1; transform: translateY(0); } 75%, 100% { opacity: 0; transform: translateY(-6px); } }
+  @keyframes rot3 { 0%, 70% { opacity: 0; transform: translateY(6px); } 75%, 95% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-6px); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+  
+  <rect width="1200" height="190" rx="28" fill="#fbfbfd"/>
+  <rect x="1" y="1" width="1198" height="188" rx="27" fill="none" stroke="#d2d2d7"/>
+  <text x="68" y="55" fill="#1d1d1f" font-size="28" font-weight="700">Languages</text>
+  <text x="68" y="79" fill="#6e6e73" font-size="14">Core tools I use for real projects.</text>
+  
+  <g>
+    <rect x="90" y="88" width="132" height="74" rx="18" fill="#ffffff" stroke="#e8e8ed"/>
+    <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjMDA3NEJEIiBkPSJNNDcuNjE3IDk4LjEycy00Ljc2NyAyLjc3NCAzLjM5NyAzLjcxYzkuODkyIDEuMTMgMTQuOTQ3Ljk2OCAyNS44NDUtMS4wOTIgMCAwIDIuODcxIDEuNzk1IDYuODczIDMuMzUxLTI0LjQzOSAxMC40Ny01NS4zMDgtLjYwNy0zNi4xMTUtNS45Njl6bS0yLjk4OC0xMy42NjVzLTUuMzQ4IDMuOTU5IDIuODIzIDQuODA1YzEwLjU2NyAxLjA5MSAxOC45MSAxLjE4IDMzLjM1NC0xLjYgMCAwIDEuOTkzIDIuMDI1IDUuMTMyIDMuMTMxLTI5LjU0MiA4LjY0LTYyLjQ0Ni42OC00MS4zMDktNi4zMzZ6Ii8+PHBhdGggZmlsbD0iI0VBMkQyRSIgZD0iTTY5LjgwMiA2MS4yNzFjNi4wMjUgNi45MzUtMS41OCAxMy4xNy0xLjU4IDEzLjE3czE1LjI4OS03Ljg5MSA4LjI2OS0xNy43NzdjLTYuNTU5LTkuMjE1LTExLjU4Ny0xMy43OTIgMTUuNjM1LTI5LjU4IDAgLjAwMS00Mi43MzEgMTAuNjctMjIuMzI0IDM0LjE4N3oiLz48cGF0aCBmaWxsPSIjMDA3NEJEIiBkPSJNMTAyLjEyMyAxMDguMjI5czMuNTI5IDIuOTEtMy44ODggNS4xNTljLTE0LjEwMiA0LjI3Mi01OC43MDYgNS41Ni03MS4wOTQuMTcxLTQuNDUxLTEuOTM4IDMuODk5LTQuNjI1IDYuNTI2LTUuMTkyIDIuNzM5LS41OTMgNC4zMDMtLjQ4NSA0LjMwMy0uNDg1LTQuOTUzLTMuNDg3LTMyLjAxMyA2Ljg1LTEzLjc0MyA5LjgxNSA0OS44MjEgOC4wNzYgOTAuODE3LTMuNjM3IDc3Ljg5Ni05LjQ2OHpNNDkuOTEyIDcwLjI5NHMtMjIuNjg2IDUuMzg5LTguMDMzIDcuMzQ4YzYuMTg4LjgyOCAxOC41MTguNjM4IDMwLjAxMS0uMzI2IDkuMzktLjc4OSAxOC44MTMtMi40NzQgMTguODEzLTIuNDc0cy0zLjMwOCAxLjQxOS01LjcwNCAzLjA1M2MtMjMuMDQyIDYuMDYxLTY3LjU0NCAzLjIzOC01NC43MzEtMi45NTggMTAuODMyLTUuMjM5IDE5LjY0NC00LjY0MyAxOS42NDQtNC42NDN6bTQwLjY5NyAyMi43NDdjMjMuNDIxLTEyLjE2NyAxMi41OTEtMjMuODYgNS4wMzItMjIuMjg1LTEuODQ4LjM4NS0yLjY3Ny43Mi0yLjY3Ny43MnMuNjg4LTEuMDc5IDItMS41NDNjMTQuOTUzLTUuMjU1IDI2LjQ1MSAxNS41MDMtNC44MjMgMjMuNzI1IDAtLjAwMi4zNTktLjMyNy40NjgtLjYxN3oiLz48cGF0aCBmaWxsPSIjRUEyRDJFIiBkPSJNNzYuNDkxIDEuNTg3Uzg5LjQ1OSAxNC41NjMgNjQuMTg4IDM0LjUxYy0yMC4yNjYgMTYuMDA2LTQuNjIxIDI1LjEzLS4wMDcgMzUuNTU5LTExLjgzMS0xMC42NzMtMjAuNTA5LTIwLjA3LTE0LjY4OC0yOC44MTVDNTguMDQxIDI4LjQyIDgxLjcyMiAyMi4xOTUgNzYuNDkxIDEuNTg3eiIvPjxwYXRoIGZpbGw9IiMwMDc0QkQiIGQ9Ik01Mi4yMTQgMTI2LjAyMWMyMi40NzYgMS40MzcgNTctLjggNTcuODE3LTExLjQzNiAwIDAtMS41NzEgNC4wMzItMTguNTc3IDcuMjMxLTE5LjE4NiAzLjYxMi00Mi44NTQgMy4xOTEtNTYuODg3Ljg3NCAwIC4wMDEgMi44NzUgMi4zODEgMTcuNjQ3IDMuMzMxeiIvPjwvc3ZnPg==" x="138" y="104" width="36" height="36" preserveAspectRatio="xMidYMid meet"/>
+    <text x="156" y="151" fill="#6e6e73" font-size="12" font-weight="650" text-anchor="middle">Java</text>
+  </g>
+  <g>
+    <rect x="238" y="88" width="132" height="74" rx="18" fill="#ffffff" stroke="#e8e8ed"/>
+    <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjOUI0Rjk2IiBkPSJNMTE1LjQgMzAuN0w2Ny4xIDIuOWMtLjgtLjUtMS45LS43LTMuMS0uNy0xLjIgMC0yLjMuMy0zLjEuN2wtNDggMjcuOWMtMS43IDEtMi45IDMuNS0yLjkgNS40djU1LjdjMCAxLjEuMiAyLjQgMSAzLjVsMTA2LjgtNjJjLS42LTEuMi0xLjUtMi4xLTIuNC0yLjd6Ii8+PHBhdGggZmlsbD0iIzY4MjE3QSIgZD0iTTEwLjcgOTUuM2MuNS44IDEuMiAxLjUgMS45IDEuOWw0OC4yIDI3LjljLjguNSAxLjkuNyAzLjEuNyAxLjIgMCAyLjMtLjMgMy4xLS43bDQ4LTI3LjljMS43LTEgMi45LTMuNSAyLjktNS40VjM2LjFjMC0uOS0uMS0xLjktLjYtMi44bC0xMDYuNiA2MnoiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNODUuMyA3Ni4xQzgxLjEgODMuNSA3My4xIDg4LjUgNjQgODguNWMtMTMuNSAwLTI0LjUtMTEtMjQuNS0yNC41czExLTI0LjUgMjQuNS0yNC41YzkuMSAwIDE3LjEgNSAyMS4zIDEyLjVsMTMtNy41Yy02LjgtMTEuOS0xOS42LTIwLTM0LjMtMjAtMjEuOCAwLTM5LjUgMTcuNy0zOS41IDM5LjVzMTcuNyAzOS41IDM5LjUgMzkuNWMxNC42IDAgMjcuNC04IDM0LjItMTkuOGwtMTIuOS03LjZ6TTk3IDY2LjJsLjktNC4zaC00LjJ2LTQuN2g1LjFMMTAwIDUxaDQuOWwtMS4yIDYuMWgzLjhsMS4yLTYuMWg0LjhsLTEuMiA2LjFoMi40djQuN2gtMy4zbC0uOSA0LjNoNC4ydjQuN2gtNS4xbC0xLjIgNmgtNC45bDEuMi02aC0zLjhsLTEuMiA2aC00LjhsMS4yLTZoLTIuNHYtNC43SDk3em00LjggMGgzLjhsLjktNC4zaC0zLjhsLS45IDQuM3oiLz48L3N2Zz4=" x="286" y="104" width="36" height="36" preserveAspectRatio="xMidYMid meet"/>
+    <text x="304" y="151" fill="#6e6e73" font-size="12" font-weight="650" text-anchor="middle">C#</text>
+  </g>
+  <g>
+    <rect x="386" y="88" width="132" height="74" rx="18" fill="#ffffff" stroke="#e8e8ed"/>
+    <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQiIGhlaWdodD0iMTQ0IiB2aWV3Qm94PSIwIDAgMTQ0IDE0NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJDIj4KICA8cGF0aCBkPSJNNzIgOCAxMjYgMzl2NjZMNzIgMTM2IDE4IDEwNVYzOVoiIGZpbGw9IiMyRjgwRUQiLz4KICA8cGF0aCBkPSJNNzIgMjAgMTE1IDQ1djU0bC00MyAyNS00My0yNVY0NVoiIGZpbGw9IiMxQjVGQkUiLz4KICA8dGV4dCB4PSI3MiIgeT0iOTEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSItYXBwbGUtc3lzdGVtLEJsaW5rTWFjU3lzdGVtRm9udCxTZWdvZSBVSSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjU4IiBmb250LXdlaWdodD0iODAwIj5DPC90ZXh0Pgo8L3N2Zz4K" x="434" y="104" width="36" height="36" preserveAspectRatio="xMidYMid meet"/>
+    <text x="452" y="151" fill="#6e6e73" font-size="12" font-weight="650" text-anchor="middle">C</text>
+  </g>
+  <g>
+    <rect x="534" y="88" width="132" height="74" rx="18" fill="#ffffff" stroke="#e8e8ed"/>
+    <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQiIGhlaWdodD0iMTQ0IiB2aWV3Qm94PSIwIDAgMTQ0IDE0NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJDKysiPgogIDxwYXRoIGQ9Ik03MiA4IDEyNiAzOXY2Nkw3MiAxMzYgMTggMTA1VjM5WiIgZmlsbD0iIzVFNUNFNiIvPgogIDxwYXRoIGQ9Ik03MiAyMCAxMTUgNDV2NTRsLTQzIDI1LTQzLTI1VjQ1WiIgZmlsbD0iIzM2MzRBMyIvPgogIDx0ZXh0IHg9IjU4IiB5PSI5MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFNlZ29lIFVJLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSI4MDAiPkM8L3RleHQ+CiAgPHRleHQgeD0iOTMiIHk9IjYyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSxCbGlua01hY1N5c3RlbUZvbnQsU2Vnb2UgVUksc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9IjgwMCI+Kys8L3RleHQ+Cjwvc3ZnPgo=" x="582" y="104" width="36" height="36" preserveAspectRatio="xMidYMid meet"/>
+    <text x="600" y="151" fill="#6e6e73" font-size="12" font-weight="650" text-anchor="middle">C++</text>
+  </g>
+  <g>
+    <rect x="682" y="88" width="132" height="74" rx="18" fill="#ffffff" stroke="#e8e8ed"/>
+    <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij48cGF0aCBmaWxsPSIjRjBEQjRGIiBkPSJNMS40MDggMS40MDhoMTI1LjE4NHYxMjUuMTg1SDEuNDA4eiIvPjxwYXRoIGZpbGw9IiMzMjMzMzAiIGQ9Ik0xMTYuMzQ3IDk2LjczNmMtLjkxNy01LjcxMS00LjY0MS0xMC41MDgtMTUuNjcyLTE0Ljk4MS0zLjgzMi0xLjc2MS04LjEwNC0zLjAyMi05LjM3Ny01LjkyNi0uNDUyLTEuNjktLjUxMi0yLjY0Mi0uMjI2LTMuNjY1LjgyMS0zLjMyIDQuNzg0LTQuMzU1IDcuOTI1LTMuNDAzIDIuMDIzLjY3OCAzLjkzOCAyLjIzNyA1LjA5MyA0LjcyNCA1LjQwMi0zLjQ5OCA1LjM5MS0zLjQ3NSA5LjE2My01Ljg3OS0xLjM4MS0yLjE0MS0yLjExOC0zLjEyOS0zLjAyMi00LjA0NS0zLjI0OS0zLjYyOS03LjY3Ni01LjQ5OC0xNC43NTYtNS4zNTVsLTMuNjg4LjQ3N2MtMy41MzQuODkzLTYuOTAyIDIuNzQ4LTguODc3IDUuMjM1LTUuOTI2IDYuNzI0LTQuMjM2IDE4LjQ5MiAyLjk3NSAyMy4zMzUgNy4xMDQgNS4zMzIgMTcuNTQgNi41NDUgMTguODczIDExLjUzMSAxLjI5NyA2LjEwNC00LjQ4NiA4LjA4LTEwLjIzNCA3LjM3OC00LjIzNi0uODgxLTYuNTkyLTMuMDM0LTkuMTM5LTYuOTQ5LTQuNjg4IDIuNzEzLTQuNjg4IDIuNzEzLTkuNTA4IDUuNDg1IDEuMTQzIDIuNDk5IDIuMzQ0IDMuNjMgNC4yNiA1Ljc5NSA5LjA2OCA5LjE5OCAzMS43NiA4Ljc0NiAzNS44My01LjE3Ni4xNjUtLjQ3OCAxLjI2MS0zLjY2Ni4zOC04LjU4MXpNNjkuNDYyIDU4Ljk0M0g1Ny43NTNsLS4wNDggMzAuMjcyYzAgNi40MzguMzMzIDEyLjM0LS43MTQgMTQuMTQ5LTEuNzEzIDMuNTU4LTYuMTUyIDMuMTE3LTguMTc1IDIuNDI3LTIuMDU5LTEuMDEyLTMuMTA2LTIuNDUxLTQuMzE5LTQuNDg1LS4zMzMtLjU4NC0uNTgzLTEuMDM2LS42NjctMS4wNzFsLTkuNTIgNS44M2MxLjU4MyAzLjI0OSAzLjkxNSA2LjA2OSA2LjkwMiA3LjkwMSA0LjQ2MiAyLjY3OCAxMC40NTkgMy40OTkgMTYuNzMxIDIuMDU5IDQuMDgyLTEuMTg5IDcuNjA0LTMuNjUyIDkuNDQ4LTcuNDAxIDIuNjY2LTQuOTE1IDIuMDk0LTEwLjg2NCAyLjA3LTE3LjQ0NC4wNi0xMC43MzUuMDAxLTIxLjQ2OC4wMDEtMzIuMjM3eiIvPjwvc3ZnPg==" x="730" y="104" width="36" height="36" preserveAspectRatio="xMidYMid meet"/>
+    <text x="748" y="151" fill="#6e6e73" font-size="12" font-weight="650" text-anchor="middle">JavaScript</text>
+  </g>
+  <g>
+    <rect x="830" y="88" width="132" height="74" rx="18" fill="#ffffff" stroke="#e8e8ed"/>
+    <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQiIGhlaWdodD0iMTQ0IiB2aWV3Qm94PSIwIDAgMTQ0IDE0NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJUeXBlU2NyaXB0Ij4KICA8cmVjdCB4PSIxMiIgeT0iMTIiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiByeD0iMjgiIGZpbGw9IiMwMDdBQ0MiLz4KICA8cmVjdCB4PSIyMyIgeT0iMjMiIHdpZHRoPSI5OCIgaGVpZ2h0PSI5OCIgcng9IjIwIiBmaWxsPSIjMEE4NEZGIiBvcGFjaXR5PSIuNSIvPgogIDx0ZXh0IHg9IjcyIiB5PSI5MSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9Ii1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LFNlZ29lIFVJLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDYiIGZvbnQtd2VpZ2h0PSI4MDAiPlRTPC90ZXh0Pgo8L3N2Zz4K" x="878" y="104" width="36" height="36" preserveAspectRatio="xMidYMid meet"/>
+    <text x="896" y="151" fill="#6e6e73" font-size="12" font-weight="650" text-anchor="middle">TypeScript</text>
+  </g>
+  <g>
+    <rect x="978" y="88" width="132" height="74" rx="18" fill="#ffffff" stroke="#e8e8ed"/>
+    <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYSIgeDE9IjUwMC4wMDMiIHgyPSItLjA5NyIgeTE9IjU3OS4xMDYiIHkyPSIxMDc5LjIwNiIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgxNS41MzQgLTk2Ljc3NCkgc2NhbGUoLjE5MzkpIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iLjAwMyIgc3RvcC1jb2xvcj0iI2U0NDg1NyIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii40NjkiIHN0b3AtY29sb3I9IiNjNzExZTEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjN2Y1MmZmIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cGF0aCBmaWxsPSJ1cmwoI2EpIiBkPSJNMTEyLjQ4NCAxMTIuNDg0SDE1LjUxNlYxNS41MTZoOTYuOTY4TDY0IDY0Wm0wIDAiLz4KPC9zdmc+Cg==" x="1026" y="104" width="36" height="36" preserveAspectRatio="xMidYMid meet"/>
+    <text x="1044" y="151" fill="#6e6e73" font-size="12" font-weight="650" text-anchor="middle">Kotlin</text>
+  </g>
+</svg>

@@ -24,6 +24,7 @@ jobs:
       - name: Sync stats and render assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_TRAFFIC_TOKEN: ${{ secrets.PROFILE_TRAFFIC_TOKEN }}
         run: npm run build
 
       - name: Commit changes
