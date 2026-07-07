@@ -6,7 +6,6 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const assetDir = path.join(root, "assets");
 const configPath = path.join(root, "data", "profile-config.json");
 const statsPath = path.join(root, "data", "profile-stats.json");
-const iconDir = path.join(root, "icons");
 
 const config = JSON.parse(await readFile(configPath, "utf8"));
 const stats = JSON.parse(await readFile(statsPath, "utf8"));
@@ -66,28 +65,6 @@ const esc = (value) =>
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
 
-const formatMetric = (value) => {
-  if (typeof value === "number") {
-    return new Intl.NumberFormat("en-US").format(value);
-  }
-
-  return String(value ?? "SYNC");
-};
-
-const mimeFor = (fileName) => {
-  const extension = path.extname(fileName).toLowerCase();
-
-  if (extension === ".png") return "image/png";
-  if (extension === ".jpg" || extension === ".jpeg") return "image/jpeg";
-  if (extension === ".avif") return "image/avif";
-  return "image/svg+xml";
-};
-
-async function iconDataUri(fileName) {
-  const buffer = await readFile(path.join(iconDir, fileName));
-  return `data:${mimeFor(fileName)};base64,${buffer.toString("base64")}`;
-}
-
 const palettes = {
   dark: {
     page: "#111113",
@@ -117,17 +94,21 @@ let c = palettes.dark;
 
 const sharedStyle = `
   text { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Arial, sans-serif; letter-spacing: 0; text-rendering: geometricPrecision; }
-  .draw { stroke-dasharray: 1200; animation: draw 1.4s cubic-bezier(.2, .8, .2, 1) forwards; }
+  .rise { animation: rise .55s cubic-bezier(.2, .8, .2, 1) both; }
+  .draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw 1.4s cubic-bezier(.2, .8, .2, 1) forwards; }
   .pulse { animation: pulse 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-  .point { animation: point .42s cubic-bezier(.2, .8, .2, 1) both; }
+  .nudge { animation: nudge 2.8s ease-in-out infinite; }
+  .point { opacity: 1; animation: point .42s cubic-bezier(.2, .8, .2, 1) both; }
   .rot-0 { animation: rot0 12s ease-in-out infinite; }
   .rot-1 { opacity: 0; animation: rot1 12s ease-in-out infinite; }
   .rot-2 { opacity: 0; animation: rot2 12s ease-in-out infinite; }
   .rot-3 { opacity: 0; animation: rot3 12s ease-in-out infinite; }
-  .status-line { stroke-dasharray: 92; animation: draw 1.5s .25s cubic-bezier(.2, .8, .2, 1) forwards; }
-  @keyframes draw { from { stroke-dashoffset: 1200; } to { stroke-dashoffset: 0; } }
-  @keyframes pulse { 0%, 100% { transform: scale(.94); } 50% { transform: scale(1.04); } }
-  @keyframes point { from { transform: translateY(4px) scale(.9); } to { transform: translateY(0) scale(1); } }
+  .status-line { stroke-dasharray: 92; stroke-dashoffset: 92; animation: draw 1.5s .25s cubic-bezier(.2, .8, .2, 1) forwards; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes pulse { 0%, 100% { opacity: .45; transform: scale(.94); } 50% { opacity: 1; transform: scale(1.04); } }
+  @keyframes nudge { 0%, 100% { transform: translateX(0); opacity: .55; } 50% { transform: translateX(4px); opacity: 1; } }
+  @keyframes point { from { opacity: 0; transform: translateY(4px) scale(.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
   @keyframes rot0 { 0%, 20% { opacity: 1; transform: translateY(0); } 25%, 95% { opacity: 0; transform: translateY(-6px); } 100% { opacity: 1; transform: translateY(0); } }
   @keyframes rot1 { 0%, 20% { opacity: 0; transform: translateY(6px); } 25%, 45% { opacity: 1; transform: translateY(0); } 50%, 100% { opacity: 0; transform: translateY(-6px); } }
   @keyframes rot2 { 0%, 45% { opacity: 0; transform: translateY(6px); } 50%, 70% { opacity: 1; transform: translateY(0); } 75%, 100% { opacity: 0; transform: translateY(-6px); } }
@@ -159,19 +140,17 @@ function heroSvg({ profile, hero = {} }) {
   <text x="70" y="92" fill="${c.quiet}" font-size="15" font-weight="500">Profile</text>
   <text x="68" y="150" fill="${c.text}" font-size="56" font-weight="700">${esc(profile.username)}</text>
   ${rotatingText}
-  <g transform="translate(814 54)">
-    <g>
-      <rect width="318" height="128" rx="24" fill="${c.card}" stroke="${c.hairline}"/>
-      <text x="26" y="38" fill="${c.muted}" font-size="14" font-weight="500">Live from GitHub</text>
-      <circle class="pulse" cx="278" cy="32" r="6" fill="${c.accent}"/>
-      <text x="26" y="81" fill="${c.text}" font-size="32" font-weight="700">${esc(formatMetric(snapshot.currentStreak))}</text>
-      <text x="60" y="72" fill="${c.text}" font-size="15" font-weight="650">day streak</text>
-      <text x="60" y="93" fill="${c.quiet}" font-size="12">${esc(snapshot.currentStreakRange)}</text>
-      <path d="M158 54v46" stroke="${c.hairline}" stroke-width="1"/>
-      <text x="184" y="81" fill="${c.text}" font-size="32" font-weight="700">${esc(formatMetric(snapshot.totalContributions))}</text>
-      <text x="184" y="101" fill="${c.quiet}" font-size="12">contributions</text>
-      <text x="26" y="114" fill="${c.quiet}" font-size="11">synced ${esc(snapshot.date)}</text>
-    </g>
+  <g class="rise" transform="translate(814 54)">
+    <rect width="318" height="128" rx="24" fill="${c.card}" stroke="${c.hairline}"/>
+    <text x="26" y="38" fill="${c.muted}" font-size="14" font-weight="500">GitHub signal</text>
+    <circle class="pulse" cx="278" cy="32" r="6" fill="${c.accent}"/>
+    <text x="26" y="81" fill="${c.text}" font-size="32" font-weight="700">${esc(snapshot.currentStreak)}</text>
+    <text x="60" y="72" fill="${c.text}" font-size="15" font-weight="650">day streak</text>
+    <text x="60" y="93" fill="${c.quiet}" font-size="12">${esc(snapshot.currentStreakRange)}</text>
+    <path d="M158 54v46" stroke="${c.hairline}" stroke-width="1"/>
+    <text x="184" y="81" fill="${c.text}" font-size="32" font-weight="700">${esc(snapshot.totalContributions)}</text>
+    <text x="184" y="101" fill="${c.quiet}" font-size="12">contributions</text>
+    <text x="26" y="114" fill="${c.quiet}" font-size="11">snapshot ${esc(snapshot.date)}</text>
   </g>`
   );
 }
@@ -189,8 +168,7 @@ function badgeSvg(label, options = {}) {
 
 function visitorClockSvg({ snapshot }) {
   const counter = snapshot.visitorCounter ?? { label: "Visitors", value: 0, window: "sync pending" };
-  const rawValue = formatMetric(counter.value).replace(/,/g, "").toUpperCase();
-  const digits = rawValue.length <= 4 ? rawValue.padStart(4, "0").split("") : rawValue.slice(-4).split("");
+  const digits = String(counter.value).padStart(4, "0").split("");
   const digitWidth = 48;
   const gap = 8;
   const width = 356;
@@ -199,12 +177,10 @@ function visitorClockSvg({ snapshot }) {
     .map((digit, index) => {
       const x = startX + index * (digitWidth + gap);
       return `
-  <g transform="translate(${x} 48)">
-    <g>
-      <rect width="${digitWidth}" height="66" rx="12" fill="${c.card}" stroke="${c.border}"/>
-      <path d="M0 33h${digitWidth}" stroke="${c.hairline}" stroke-width="1"/>
-      <text x="${digitWidth / 2}" y="45" fill="${c.text}" font-size="34" font-weight="650" text-anchor="middle">${esc(digit)}</text>
-    </g>
+  <g class="rise flip" style="animation-delay:${(index * 0.05).toFixed(2)}s" transform="translate(${x} 48)">
+    <rect width="${digitWidth}" height="66" rx="12" fill="${c.card}" stroke="${c.border}"/>
+    <path d="M0 33h${digitWidth}" stroke="${c.hairline}" stroke-width="1"/>
+    <text x="${digitWidth / 2}" y="45" fill="${c.text}" font-size="34" font-weight="650" text-anchor="middle">${digit}</text>
   </g>`;
     })
     .join("");
@@ -213,6 +189,8 @@ function visitorClockSvg({ snapshot }) {
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="132" viewBox="0 0 ${width} 132" role="img">
   <style>
     ${sharedStyle}
+    .flip { transform-box: fill-box; transform-origin: center; animation-name: rise, flip; animation-duration: .55s, 6s; animation-timing-function: cubic-bezier(.2,.8,.2,1), cubic-bezier(.2,.8,.2,1); animation-iteration-count: 1, infinite; }
+    @keyframes flip { 0%, 88%, 100% { transform: rotateX(0deg); } 94% { transform: rotateX(-10deg); } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
   <rect width="${width}" height="132" rx="24" fill="${c.page}"/>
@@ -226,65 +204,27 @@ function visitorClockSvg({ snapshot }) {
 function systemMapSvg({ stack }) {
   const rows = stack
     .map((item, index) => {
-      const y = 146 + index * 70;
+      const y = 170 + index * 78;
       return `
-  <g>
-    <rect x="68" y="${y - 38}" width="1064" height="58" rx="16" fill="${c.card}" stroke="${c.hairline}"/>
+  <g class="rise" style="animation-delay:${(index * 0.04).toFixed(2)}s">
+    <rect x="76" y="${y - 42}" width="1048" height="64" rx="18" fill="${c.card}" stroke="${c.hairline}"/>
     <text x="104" y="${y - 4}" fill="${c.text}" font-size="20" font-weight="650">${esc(item.group)}</text>
-    <text x="290" y="${y - 8}" fill="${c.muted}" font-size="15" font-weight="500">${esc(item.focus)}</text>
-    <text x="290" y="${y + 13}" fill="${c.quiet}" font-size="13">${esc(item.detail)}</text>
-    <rect x="936" y="${y - 8}" width="132" height="4" rx="2" fill="${c.hairline}"/>
-    <rect x="936" y="${y - 8}" width="${Math.max(16, Math.min(132, item.level * 1.32))}" height="4" rx="2" fill="${c.accent}" opacity=".86"/>
-    <text x="1092" y="${y + 3}" fill="${c.quiet}" font-size="24" text-anchor="middle">›</text>
+    <text x="288" y="${y - 8}" fill="${c.muted}" font-size="15" font-weight="500">${esc(item.focus)}</text>
+    <text x="288" y="${y + 13}" fill="${c.quiet}" font-size="13">${esc(item.detail)}</text>
+    <text class="nudge" style="animation-delay:${(index * 0.16).toFixed(2)}s" x="1090" y="${y + 3}" fill="${c.quiet}" font-size="24" text-anchor="middle">›</text>
   </g>`;
     })
     .join("");
 
   return shell(
     1200,
-    430,
+    528,
     `
-  <rect width="1200" height="430" rx="28" fill="${c.page}"/>
-  <rect x="1" y="1" width="1198" height="428" rx="27" fill="none" stroke="${c.border}"/>
-  <text x="68" y="72" fill="${c.text}" font-size="38" font-weight="700">Stack</text>
-  <text x="68" y="101" fill="${c.muted}" font-size="16">Focused, practical, and built for real projects.</text>
+  <rect width="1200" height="528" rx="28" fill="${c.page}"/>
+  <rect x="1" y="1" width="1198" height="526" rx="27" fill="none" stroke="${c.border}"/>
+  <text x="76" y="82" fill="${c.text}" font-size="40" font-weight="700">Stack</text>
+  <text x="76" y="112" fill="${c.muted}" font-size="17">Focused, practical, and built for real projects.</text>
   ${rows}`
-  );
-}
-
-async function languagesSvg({ languages = [] }) {
-  const entries = await Promise.all(
-    languages.map(async (item) => ({
-      ...item,
-      dataUri: await iconDataUri(item.icon)
-    }))
-  );
-  const itemWidth = 132;
-  const gap = 16;
-  const totalWidth = entries.length * itemWidth + (entries.length - 1) * gap;
-  const startX = (1200 - totalWidth) / 2;
-  const items = entries
-    .map((item, index) => {
-      const x = startX + index * (itemWidth + gap);
-
-      return `
-  <g>
-    <rect x="${x}" y="88" width="${itemWidth}" height="74" rx="18" fill="${c.card}" stroke="${c.hairline}"/>
-    <image href="${item.dataUri}" x="${x + 48}" y="104" width="36" height="36" preserveAspectRatio="xMidYMid meet"/>
-    <text x="${x + itemWidth / 2}" y="151" fill="${c.muted}" font-size="12" font-weight="650" text-anchor="middle">${esc(item.name)}</text>
-  </g>`;
-    })
-    .join("");
-
-  return shell(
-    1200,
-    190,
-    `
-  <rect width="1200" height="190" rx="28" fill="${c.page}"/>
-  <rect x="1" y="1" width="1198" height="188" rx="27" fill="none" stroke="${c.border}"/>
-  <text x="68" y="55" fill="${c.text}" font-size="28" font-weight="700">Languages</text>
-  <text x="68" y="79" fill="${c.muted}" font-size="14">Core tools I use for real projects.</text>
-  ${items}`
   );
 }
 
@@ -317,15 +257,15 @@ function statsSvg({ snapshot, contributions }) {
     .map((item, index) => `<circle class="point" style="animation-delay:${(0.38 + index * 0.018).toFixed(3)}s" cx="${item.x}" cy="${item.y}" r="3.5" fill="${c.text}"/>`)
     .join("");
   const statCards = [
-    ["Total", formatMetric(snapshot.totalContributions), snapshot.contributionRange],
-    ["Current", formatMetric(snapshot.currentStreak), snapshot.currentStreakRange],
-    ["Best", formatMetric(snapshot.longestStreak), snapshot.longestStreakRange],
-    ["Visitors", formatMetric(snapshot.visitorCounter?.value ?? "SYNC"), snapshot.visitorCounter?.window ?? "sync pending"]
+    ["Total", snapshot.totalContributions, snapshot.contributionRange],
+    ["Current", snapshot.currentStreak, snapshot.currentStreakRange],
+    ["Best", snapshot.longestStreak, snapshot.longestStreakRange],
+    ["Visitors", snapshot.visitorCounter?.value ?? 0, snapshot.visitorCounter?.window ?? "sync pending"]
   ]
     .map(([label, value, sub], index) => {
       const x = 76 + index * 270;
       return `
-  <g>
+  <g class="rise" style="animation-delay:${(index * 0.04).toFixed(2)}s">
     <rect x="${x}" y="118" width="236" height="104" rx="22" fill="${c.card}" stroke="${c.hairline}"/>
     <text x="${x + 24}" y="162" fill="${c.text}" font-size="31" font-weight="700">${esc(value)}</text>
     <text x="${x + 24}" y="190" fill="${c.muted}" font-size="14" font-weight="600">${esc(label)}</text>
@@ -349,7 +289,7 @@ function statsSvg({ snapshot, contributions }) {
   <path d="${linePath}" fill="none" stroke="${c.text}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".28"/>
   <path class="draw" d="${linePath}" fill="none" stroke="${c.text}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
   ${dots}
-  <text x="${graph.x}" y="${graph.y + graph.height + 62}" fill="${c.quiet}" font-size="12">Synced from GitHub and rendered from data/profile-stats.json</text>`
+  <text x="${graph.x}" y="${graph.y + graph.height + 62}" fill="${c.quiet}" font-size="12">Synced through GitHub Actions and data/profile-stats.json</text>`
   );
 }
 
@@ -361,7 +301,7 @@ function footerSvg() {
   <rect width="1200" height="82" rx="24" fill="${c.page}"/>
   <rect x="1" y="1" width="1198" height="80" rx="23" fill="none" stroke="${c.border}"/>
   <path d="M76 41h1048" stroke="${c.hairline}" stroke-width="1"/>
-  <text x="600" y="34" fill="${c.quiet}" font-size="13" text-anchor="middle">Local assets. Live GitHub data. Clean by default.</text>`
+  <text x="600" y="34" fill="${c.quiet}" font-size="13" text-anchor="middle">Built from local files. Updated by GitHub.</text>`
   );
 }
 
@@ -373,7 +313,6 @@ async function renderTheme(palette, suffix = "") {
     writeAsset(`avatar${suffix}.svg`, avatarSvg),
     writeAsset(`hero${suffix}.svg`, heroSvg(config)),
     writeAsset(`system-map${suffix}.svg`, systemMapSvg(config)),
-    writeAsset(`languages${suffix}.svg`, await languagesSvg(config)),
     writeAsset(`stats-panel${suffix}.svg`, statsSvg(stats)),
     writeAsset(`visitor-clock${suffix}.svg`, visitorClockSvg(stats)),
     writeAsset(`badge-studio${suffix}.svg`, badgeSvg("POKYH.STUDIO", { width: 166 })),

@@ -25,36 +25,6 @@
       "href": "https://github.com/Plattnericus"
     }
   ],
-  "languages": [
-    {
-      "name": "Java",
-      "icon": "java.svg"
-    },
-    {
-      "name": "C#",
-      "icon": "csharp.svg"
-    },
-    {
-      "name": "C",
-      "icon": "c.svg"
-    },
-    {
-      "name": "C++",
-      "icon": "cplusplus.svg"
-    },
-    {
-      "name": "JavaScript",
-      "icon": "js.svg"
-    },
-    {
-      "name": "TypeScript",
-      "icon": "typescript.svg"
-    },
-    {
-      "name": "Kotlin",
-      "icon": "kotlin.svg"
-    }
-  ],
   "stack": [
     {
       "group": "Systems",

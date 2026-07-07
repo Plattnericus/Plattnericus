@@ -50,12 +50,25 @@ Building reliable software with a calm, local-first setup.
   <img src="./assets/system-map.svg" width="100%" alt="Nexor engineering map">
 </picture>
 
+<details>
+<summary><b>Languages</b></summary>
 <br>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/languages-light.svg">
-  <img src="./assets/languages.svg" width="100%" alt="Nexor languages">
-</picture>
+<p align="center">
+  <img src="./icons/java.svg" height="42" alt="Java">
+  &nbsp;
+  <img src="./icons/csharp.svg" height="42" alt="C Sharp">
+  &nbsp;
+  <img src="./icons/c.png" height="42" alt="C">
+  &nbsp;
+  <img src="./icons/cplusplus.png" height="42" alt="C++">
+  &nbsp;
+  <img src="./icons/js.svg" height="42" alt="JavaScript">
+  &nbsp;
+  <img src="./icons/typescript.png" height="42" alt="TypeScript">
+  &nbsp;
+  <img src="./icons/kotlin.svg" height="42" alt="Kotlin">
+</p>
+</details>
 
 ---
 
