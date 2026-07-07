@@ -1,9 +1,0 @@
-{
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "render": "node scripts/render-readme-assets.mjs",
-    "sync:stats": "node scripts/sync-github-stats.mjs",
-    "build": "npm run sync:stats && npm run render"
-  }
-}

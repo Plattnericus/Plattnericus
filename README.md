@@ -1,84 +1,86 @@
 <div align="center">
 
-<!-- Light mode uses the source image. Dark is the fallback. -->
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/hero-light.svg">
-  <img src="./assets/hero.svg" width="100%" alt="Plattnericus profile header">
-</picture>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1320,100:2b4f81&height=180&section=header&text=Plattnericus&fontColor=e6edf3&fontSize=52&animation=fadeIn&fontAlignY=38" width="100%"/>
 
-<br><br>
+<img src="https://wsrv.nl/?url=github.com/Plattnericus.png&w=200&h=200&fit=cover&mask=circle" width="170" alt="Plattnericus"/>
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/avatar-light.svg">
-  <img src="./assets/avatar.svg" width="164" alt="Nexor avatar">
-</picture>
+### `Nexor` · turning ideas into reliable software
 
-<br><br>
-
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/visitor-clock-light.svg">
-  <img src="./assets/visitor-clock.svg" width="356" alt="Profile visitors">
-</picture>
-
-### Nexor
-
-Building reliable software with a calm, local-first setup.
-
-<br>
-
-<a href="https://pokyh.studio">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="./assets/badge-studio-light.svg">
-    <img src="./assets/badge-studio.svg" height="34" alt="pokyh.studio">
-  </picture>
+<a href="https://git.io/typing-svg">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=21&pause=900&color=4A7FC4&center=true&vCenter=true&width=620&height=40&lines=from+low-level+systems+to+high-level+interfaces;devops+in+the+making;self-hosting+enthusiast;south+tyrol+based+%E2%80%A2+building+pokyh.studio" alt="Typing SVG"/>
 </a>
+
+<br><br>
+
+<a href="https://pokyh.studio"><img src="https://img.shields.io/badge/pokyh.studio-0b0b0b?style=for-the-badge&logo=vercel&logoColor=white"/></a>
 &nbsp;
-<a href="https://github.com/Plattnericus">
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="./assets/badge-github-light.svg">
-    <img src="./assets/badge-github.svg" height="34" alt="GitHub">
-  </picture>
-</a>
+<a href="https://github.com/Plattnericus"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
+&nbsp;
+<img src="https://komarev.com/ghpvc/?username=Plattnericus&style=for-the-badge&color=2b4f81&label=profile+views"/>
 
 </div>
 
 ---
 
-<!-- Rendered from data/profile-config.json. -->
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/system-map-light.svg">
-  <img src="./assets/system-map.svg" width="100%" alt="Nexor engineering map">
-</picture>
+<div align="center">
+
+### `</>` tech stack
+
+<details open>
+<summary><b>&nbsp;languages</b></summary>
+<br>
+<img src="https://skillicons.dev/icons?i=java,cs,c,cpp,js,ts" height="40" alt="java, csharp, c, cpp, javascript, typescript"/>
+<br><br>
+</details>
 
 <details>
-<summary><b>Languages</b></summary>
+<summary><b>&nbsp;web & frameworks</b></summary>
 <br>
-<p align="center">
-  <img src="./icons/java.svg" height="42" alt="Java">
-  &nbsp;
-  <img src="./icons/csharp.svg" height="42" alt="C Sharp">
-  &nbsp;
-  <img src="./icons/c.png" height="42" alt="C">
-  &nbsp;
-  <img src="./icons/cplusplus.png" height="42" alt="C++">
-  &nbsp;
-  <img src="./icons/js.svg" height="42" alt="JavaScript">
-  &nbsp;
-  <img src="./icons/typescript.png" height="42" alt="TypeScript">
-  &nbsp;
-  <img src="./icons/kotlin.svg" height="42" alt="Kotlin">
-</p>
+<img src="https://skillicons.dev/icons?i=html,css,react,nextjs,svelte,nodejs" height="40" alt="html, css, react, nextjs, svelte, nodejs"/>
+<br><br>
 </details>
+
+<details>
+<summary><b>&nbsp;databases</b></summary>
+<br>
+<img src="https://skillicons.dev/icons?i=mysql,postgres,sqlite" height="40" alt="mysql, postgresql, sqlite"/>
+<br><br>
+</details>
+
+<details>
+<summary><b>&nbsp;devops & self-hosting</b></summary>
+<br>
+<img src="https://skillicons.dev/icons?i=docker,nginx,cloudflare,githubactions,bash,linux" height="40" alt="docker, nginx, cloudflare, github actions, bash, linux"/>
+<br><br>
+</details>
+
+<details>
+<summary><b>&nbsp;systems & tools</b></summary>
+<br>
+<img src="https://skillicons.dev/icons?i=arduino,git,vscode,figma,blender" height="40" alt="arduino, git, vscode, figma, blender"/>
+<br><br>
+</details>
+
+</div>
 
 ---
 
-<!-- Rendered from data/profile-stats.json. The workflow keeps it fresh. -->
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/stats-panel-light.svg">
-  <img src="./assets/stats-panel.svg" width="100%" alt="Nexor local GitHub stats">
-</picture>
+<div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: light)" srcset="./assets/footer-light.svg">
-  <img src="./assets/footer.svg" width="100%" alt="Profile footer">
-</picture>
+### `~` stats
+
+<img src="https://github-readme-stats.vercel.app/api?username=Plattnericus&show_icons=true&hide_border=true&count_private=true&theme=transparent&title_color=2b4f81&icon_color=2b4f81&text_color=8b949e&ring_color=4a7fc4" height="165"/>
+&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Plattnericus&layout=compact&hide_border=true&theme=transparent&title_color=2b4f81&text_color=8b949e&langs_count=8" height="165"/>
+
+<br><br>
+
+<img src="https://streak-stats.demolab.com/?user=Plattnericus&hide_border=true&background=00000000&stroke=2b4f81&ring=4a7fc4&fire=6ea8ff&currStreakLabel=8b949e&sideLabels=8b949e&dates=8b949e&currStreakNum=e6edf3&sideNums=e6edf3" height="160"/>
+
+<br><br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Plattnericus&hide_border=true&bg_color=00000000&color=6ea8ff&line=2b4f81&point=6ea8ff&area=true&area_color=2b4f81" width="95%"/>
+
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2b4f81,100:0d1320&height=120&section=footer" width="100%"/>
