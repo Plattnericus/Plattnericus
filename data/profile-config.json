@@ -1,0 +1,55 @@
+{
+  "profile": {
+    "displayName": "Nexor",
+    "username": "Plattnericus",
+    "headline": "turning ideas into reliable software",
+    "location": "South Tyrol",
+    "website": "www.plattnericus.dev",
+    "studio": "pokyh.studio"
+  },
+  "hero": {
+    "rotatingLines": [
+      "turning ideas into reliable software",
+      "building clean interfaces",
+      "shipping local-first systems",
+      "keeping infrastructure calm"
+    ]
+  },
+  "links": [
+    {
+      "label": "POKYH.STUDIO",
+      "href": "https://pokyh.studio"
+    },
+    {
+      "label": "GITHUB",
+      "href": "https://github.com/Plattnericus"
+    }
+  ],
+  "stack": [
+    {
+      "group": "Systems",
+      "focus": "Java, C#, C, C++",
+      "detail": "Typed software, low-level concepts, and hardware-adjacent work.",
+      "level": 90
+    },
+    {
+      "group": "Interfaces",
+      "focus": "JavaScript, TypeScript, React, Next.js, Svelte",
+      "detail": "Clean product surfaces with practical interaction design.",
+      "level": 84
+    },
+    {
+      "group": "Data",
+      "focus": "PostgreSQL, MySQL",
+      "detail": "Schemas, storage, and reliable application state.",
+      "level": 76
+    },
+    {
+      "group": "Operations",
+      "focus": "Linux, Node.js, Cisco, self-hosting",
+      "detail": "Local services, networking, and deployment routines.",
+      "level": 82
+    }
+  ],
+  "statsSince": "2024-02-22"
+}

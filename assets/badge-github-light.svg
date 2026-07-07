@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="38" viewBox="0 0 132 38" role="img">
+  <style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Arial, sans-serif; letter-spacing: 0; text-rendering: geometricPrecision; }
+  .rise { animation: rise .55s cubic-bezier(.2, .8, .2, 1) both; }
+  .draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw 1.4s cubic-bezier(.2, .8, .2, 1) forwards; }
+  .pulse { animation: pulse 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .nudge { animation: nudge 2.8s ease-in-out infinite; }
+  .point { opacity: 1; animation: point .42s cubic-bezier(.2, .8, .2, 1) both; }
+  .rot-0 { animation: rot0 12s ease-in-out infinite; }
+  .rot-1 { opacity: 0; animation: rot1 12s ease-in-out infinite; }
+  .rot-2 { opacity: 0; animation: rot2 12s ease-in-out infinite; }
+  .rot-3 { opacity: 0; animation: rot3 12s ease-in-out infinite; }
+  .status-line { stroke-dasharray: 92; stroke-dashoffset: 92; animation: draw 1.5s .25s cubic-bezier(.2, .8, .2, 1) forwards; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes pulse { 0%, 100% { opacity: .45; transform: scale(.94); } 50% { opacity: 1; transform: scale(1.04); } }
+  @keyframes nudge { 0%, 100% { transform: translateX(0); opacity: .55; } 50% { transform: translateX(4px); opacity: 1; } }
+  @keyframes point { from { opacity: 0; transform: translateY(4px) scale(.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  @keyframes rot0 { 0%, 20% { opacity: 1; transform: translateY(0); } 25%, 95% { opacity: 0; transform: translateY(-6px); } 100% { opacity: 1; transform: translateY(0); } }
+  @keyframes rot1 { 0%, 20% { opacity: 0; transform: translateY(6px); } 25%, 45% { opacity: 1; transform: translateY(0); } 50%, 100% { opacity: 0; transform: translateY(-6px); } }
+  @keyframes rot2 { 0%, 45% { opacity: 0; transform: translateY(6px); } 50%, 70% { opacity: 1; transform: translateY(0); } 75%, 100% { opacity: 0; transform: translateY(-6px); } }
+  @keyframes rot3 { 0%, 70% { opacity: 0; transform: translateY(6px); } 75%, 95% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-6px); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+  <rect x="1" y="1" width="130" height="36" rx="18" fill="#f5f5f7" stroke="#e8e8ed"/>
+  <text x="66" y="24" fill="#1d1d1f" font-size="13" font-weight="650" text-anchor="middle">GITHUB</text>
+</svg>
