@@ -12,13 +12,9 @@
 
 <br><br>
 
-<a href="https://plattnericus.dev">
-  <img height="26" src="https://img.shields.io/badge/-plattnericus.dev-2b4f81?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0d1320"/>
-</a>
+<a href="https://plattnericus.dev"><img height="26" src="https://img.shields.io/badge/-plattnericus.dev-2b4f81?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0d1320"/></a>
 &nbsp;
-<a href="https://github.com/Plattnericus">
-  <img height="26" src="https://img.shields.io/badge/-Plattnericus-2b4f81?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1320"/>
-</a>
+<a href="https://github.com/Plattnericus"><img height="26" src="https://img.shields.io/badge/-Plattnericus-2b4f81?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1320"/></a>
 &nbsp;
 <img height="26" src="https://komarev.com/ghpvc/?username=Plattnericus&style=for-the-badge&color=2b4f81&label=views"/>
 
