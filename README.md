@@ -12,7 +12,7 @@
 
 <br><br>
 
-<a href="https://pokyh.studio"><img src="https://img.shields.io/badge/pokyh.studio-0b0b0b?style=for-the-badge&logo=vercel&logoColor=white"/></a>
+<a href="https://plattnericus.dev"><img src="https://img.shields.io/badge/Website-plattnericus.dev-2b4f81?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0d1320"/></a>
 &nbsp;
 <a href="https://github.com/Plattnericus"><img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
 &nbsp;
