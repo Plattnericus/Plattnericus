@@ -73,7 +73,7 @@
 &nbsp;
 <img src="https://img.shields.io/github/stars/Plattnericus?style=for-the-badge&color=2b4f81&labelColor=0d1117&label=stars"/>
 &nbsp;
-<img src="https://komarev.com/ghpvc/?username=Plattnericus&style=for-the-badge&color=2b4f81&label=views"/>
+<img src="https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=repos&query=%24.public_repos&url=https%3A%2F%2Fapi.github.com%2Fusers%2FPlattnericus&color=2b4f81&labelColor=0d1117"/>
 
 <br><br>
 
