@@ -69,9 +69,11 @@
 
 ### `~` stats
 
-<img src="https://github-readme-stats.vercel.app/api?username=Plattnericus&show_icons=true&hide_border=true&theme=github_dark&cache_seconds=86400" height="165"/>
+<img src="https://img.shields.io/github/followers/Plattnericus?style=for-the-badge&color=2b4f81&labelColor=0d1117&label=followers"/>
 &nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Plattnericus&layout=compact&hide_border=true&theme=github_dark&langs_count=8&cache_seconds=86400" height="165"/>
+<img src="https://img.shields.io/github/stars/Plattnericus?style=for-the-badge&color=2b4f81&labelColor=0d1117&label=stars"/>
+&nbsp;
+<img src="https://komarev.com/ghpvc/?username=Plattnericus&style=for-the-badge&color=2b4f81&label=views"/>
 
 <br><br>
 
