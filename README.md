@@ -7,7 +7,7 @@
 ### `Nexor` · turning ideas into reliable software
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=21&pause=900&color=4A7FC4&center=true&vCenter=true&width=620&height=40&lines=from+low-level+systems+to+high-level+interfaces;devops+in+the+making;self-hosting+enthusiast;south+tyrol+based+%E2%80%A2+building+pokyh.studio" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=21&pause=900&color=4A7FC4&center=true&vCenter=true&width=620&height=40&lines=from+low-level+systems+to+high-level+interfaces;devops+in+the+making;cybersecurity+in+the+making;self-hosting+enthusiast;south+tyrol+based+%E2%80%A2+building+pokyh.studio" alt="Typing SVG"/>
 </a>
 
 <br><br>
