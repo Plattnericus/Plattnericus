@@ -69,9 +69,9 @@
 
 ### `~` stats
 
-<img src="https://github-readme-stats.vercel.app/api?username=Plattnericus&show_icons=true&hide_border=true&count_private=true&theme=transparent&title_color=2b4f81&icon_color=2b4f81&text_color=8b949e&ring_color=4a7fc4" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api?username=Plattnericus&show_icons=true&hide_border=true&theme=github_dark&cache_seconds=86400" height="165"/>
 &nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Plattnericus&layout=compact&hide_border=true&theme=transparent&title_color=2b4f81&text_color=8b949e&langs_count=8" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Plattnericus&layout=compact&hide_border=true&theme=github_dark&langs_count=8&cache_seconds=86400" height="165"/>
 
 <br><br>
 
