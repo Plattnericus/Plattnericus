@@ -1,15 +1,19 @@
-name: commit-invaders
+name: space-shooter
 on:
   schedule: [{ cron: "0 3 * * *" }]
   workflow_dispatch:
-  push: { branches: [main] }
+permissions:
+  contents: write
 jobs:
-  generate:
+  update-game:
     runs-on: ubuntu-latest
-    permissions: { contents: write }
     steps:
-      - uses: actions/checkout@v4
-      - uses: Goblinlordx/commit-invaders@v1
+      - uses: actions/checkout@v6
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_user_name: ${{ github.repository_owner }}
+          fetch-depth: 2
+      - uses: czl9707/gh-space-shooter@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          output-path: "game.gif"
+          strategy: "random"
+          fps: 30
