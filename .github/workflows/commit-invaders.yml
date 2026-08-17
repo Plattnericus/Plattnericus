@@ -12,13 +12,30 @@ jobs:
   update-game:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
-      - uses: czl9707/gh-space-shooter@v2
+      - uses: actions/setup-python@v5
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          output-path: game.gif
-          strategy: random
-          fps: 30
+          python-version: "3.12"
+
+      - run: pip install gh-space-shooter
+
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh-space-shooter ${{ github.repository_owner }} --output game.gif --strategy random --fps 60
+
+      - run: |
+          mv -f game.gif game.png
+          git config user.name "Plattnericus"
+          git config user.email "felix.plattner312009@outlook.de"
+          git add game.png
+          git diff --staged --quiet && exit 0
+          if [ "$(git log -1 --pretty=%s)" = "update space shooter" ]; then
+            git commit --amend --no-edit
+            git push --force-with-lease
+          else
+            git commit -m "update space shooter"
+            git push
+          fi
