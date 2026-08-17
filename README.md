@@ -26,17 +26,23 @@
 
 ### `~` currently
 
-<sub>I am from South Tyrol and I build web apps end to end. The half where you have to run the thing yourself taught me more than the coding did.</sub>
+</div>
 
-<br><br>
+```console
+$ whoami
+Nexor, fullstack developer from South Tyrol
 
-<img height="30" src="https://img.shields.io/badge/building-POKYH-2b4f81?style=flat&logo=nextdotjs&logoColor=white&labelColor=0d1320"/>
-&nbsp;
-<img height="30" src="https://img.shields.io/badge/running-selfhosted%20infra-2b4f81?style=flat&logo=docker&logoColor=white&labelColor=0d1320"/>
-&nbsp;
-<img height="30" src="https://img.shields.io/badge/learning-cybersecurity-2b4f81?style=flat&logo=linux&logoColor=white&labelColor=0d1320"/>
+$ currently
+building    POKYH, a school platform that real students use every day
+running     self-hosted infrastructure on Docker and Linux
+learning    security, properly this time
 
-<br><br>
+$ why
+The half where you have to run the thing yourself
+taught me more than the coding did.
+```
+
+<div align="center">
 
 <sub>More about all of it on <a href="https://plattnericus.dev"><b>plattnericus.dev</b></a>. Repos are pinned right below.</sub>
 
@@ -80,7 +86,7 @@
 
 ### `>` space invaders, built from my commits
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/game.gif?v=6" width="100%" alt="My contribution graph as a space shooter"/>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/game.png?v=7" width="100%" alt="My contribution graph as a space shooter"/>
 
 <sub>a year of contributions, getting shot at. rebuilds itself every day.</sub>
 
