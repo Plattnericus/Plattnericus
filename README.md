@@ -12,11 +12,11 @@
 
 <br><br>
 
-<a href="https://plattnericus.dev"><img height="26" src="https://img.shields.io/badge/-plattnericus.dev-2b4f81?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0d1320"/></a>
+<a href="https://plattnericus.dev"><img height="28" src="https://img.shields.io/badge/plattnericus.dev-2b4f81?style=flat&logo=vercel&logoColor=white&labelColor=0d1320"/></a>
 &nbsp;
-<a href="mailto:felix.plattner89@icloud.com"><img height="26" src="https://img.shields.io/badge/-contact-2b4f81?style=for-the-badge&logo=maildotru&logoColor=white&labelColor=0d1320"/></a>
+<a href="mailto:felix.plattner89@icloud.com"><img height="28" src="https://img.shields.io/badge/contact-2b4f81?style=flat&logo=maildotru&logoColor=white&labelColor=0d1320"/></a>
 &nbsp;
-<a href="https://github.com/Plattnericus?tab=repositories"><img height="26" src="https://img.shields.io/badge/-repositories-2b4f81?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1320"/></a>
+<a href="https://github.com/Plattnericus?tab=repositories"><img height="28" src="https://img.shields.io/badge/repositories-2b4f81?style=flat&logo=github&logoColor=white&labelColor=0d1320"/></a>
 
 </div>
 
@@ -24,29 +24,22 @@
 
 <div align="center">
 
-### `~` build · deploy · secure
+### `~` currently
 
-</div>
+<sub>I am from South Tyrol and I build web apps end to end. The half where you have to run the thing yourself taught me more than the coding did.</sub>
 
-<table align="center" width="100%">
-<tr>
-<td align="center" width="33%" valign="top">
-  <b>Build</b><br><br>
-  <sub>Mostly Next.js and TypeScript. I do the frontend, the API and whatever sits behind it, and I care that the thing actually feels good to use.</sub>
-</td>
-<td align="center" width="33%" valign="top">
-  <b>Deploy</b><br><br>
-  <sub>Docker containers on Linux servers with Cloudflare in front. Some of it runs on hardware standing in my room, which is where I learned most of this.</sub>
-</td>
-<td align="center" width="33%" valign="top">
-  <b>Secure</b><br><br>
-  <sub>The part I am still learning. For now that means reading up on how things get broken and not shipping the obvious mistakes.</sub>
-</td>
-</tr>
-</table>
+<br><br>
 
-<div align="center">
-  <sub>More about all of it on <a href="https://plattnericus.dev"><b>plattnericus.dev</b></a>. Repos are pinned right below.</sub>
+<img height="30" src="https://img.shields.io/badge/building-POKYH-2b4f81?style=flat&logo=nextdotjs&logoColor=white&labelColor=0d1320"/>
+&nbsp;
+<img height="30" src="https://img.shields.io/badge/running-selfhosted%20infra-2b4f81?style=flat&logo=docker&logoColor=white&labelColor=0d1320"/>
+&nbsp;
+<img height="30" src="https://img.shields.io/badge/learning-cybersecurity-2b4f81?style=flat&logo=linux&logoColor=white&labelColor=0d1320"/>
+
+<br><br>
+
+<sub>More about all of it on <a href="https://plattnericus.dev"><b>plattnericus.dev</b></a>. Repos are pinned right below.</sub>
+
 </div>
 
 ---
@@ -65,15 +58,19 @@
 
 ### `#` stats
 
-<img height="26" src="https://komarev.com/ghpvc/?username=Plattnericus&style=for-the-badge&color=2b4f81&label=profile+views"/>
+<img height="28" src="https://komarev.com/ghpvc/?username=Plattnericus&style=flat&color=2b4f81&label=profile+views"/>
 &nbsp;
-<img height="26" src="https://img.shields.io/github/followers/Plattnericus?style=for-the-badge&color=2b4f81&labelColor=0d1320&label=followers"/>
+<img height="28" src="https://img.shields.io/github/followers/Plattnericus?style=flat&color=2b4f81&labelColor=0d1320&label=followers"/>
 &nbsp;
-<img height="26" src="https://img.shields.io/github/last-commit/Plattnericus/Plattnericus?style=for-the-badge&color=2b4f81&labelColor=0d1320&label=updated"/>
+<img height="28" src="https://img.shields.io/github/last-commit/Plattnericus/Plattnericus?style=flat&color=2b4f81&labelColor=0d1320&label=updated"/>
 
 <br><br>
 
-<img height="165" src="https://streak-stats.demolab.com/?user=Plattnericus&hide_border=true&background=00000000&stroke=2b4f81&ring=4a7fc4&fire=6ea8ff&currStreakLabel=8b949e&sideLabels=8b949e&dates=8b949e&currStreakNum=4a7fc4&sideNums=4a7fc4" alt="Contribution streak"/>
+<a href="https://github.com/Plattnericus/ThreeJS_Portfolio"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/ThreeJS_Portfolio?style=flat&color=2b4f81&labelColor=0d1320&label=ThreeJS_Portfolio"/></a>
+&nbsp;
+<a href="https://github.com/Plattnericus/StreamDeck"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/StreamDeck?style=flat&color=2b4f81&labelColor=0d1320&label=StreamDeck"/></a>
+&nbsp;
+<a href="https://github.com/bedchem/POKYH"><img height="28" src="https://img.shields.io/github/stars/bedchem/POKYH?style=flat&color=2b4f81&labelColor=0d1320&label=POKYH"/></a>
 
 </div>
 
@@ -83,11 +80,7 @@
 
 ### `>` space invaders, built from my commits
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/commit-invaders-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/commit-invaders.svg">
-  <img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/commit-invaders.svg" width="100%" alt="My contribution graph as a game of Space Invaders"/>
-</picture>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/game.gif?v=6" width="100%" alt="My contribution graph as a space shooter"/>
 
 <sub>a year of contributions, getting shot at. rebuilds itself every day.</sub>
 
