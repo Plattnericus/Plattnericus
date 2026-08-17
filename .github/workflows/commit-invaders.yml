@@ -24,7 +24,7 @@ jobs:
 
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh-space-shooter ${{ github.repository_owner }} --output game.gif --strategy random --fps 60
+        run: gh-space-shooter ${{ github.repository_owner }} --output game.gif --strategy random --fps 30
 
       - run: |
           mv -f game.gif game.png
