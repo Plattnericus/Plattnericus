@@ -32,21 +32,21 @@
 <tr>
 <td align="center" width="33%" valign="top">
   <b>Build</b><br><br>
-  <sub>Fullstack products from interface to API. Next.js, TypeScript and browser experiences that behave like software, not pages.</sub>
+  <sub>Mostly Next.js and TypeScript. I do the frontend, the API and whatever sits behind it, and I care that the thing actually feels good to use.</sub>
 </td>
 <td align="center" width="33%" valign="top">
   <b>Deploy</b><br><br>
-  <sub>Docker, Linux servers, Cloudflare routing and self-hosted infrastructure that stays up without babysitting.</sub>
+  <sub>Docker containers on Linux servers with Cloudflare in front. Some of it runs on hardware standing in my room, which is where I learned most of this.</sub>
 </td>
 <td align="center" width="33%" valign="top">
   <b>Secure</b><br><br>
-  <sub>Hardening what I ship — secure deployment practices and a cybersecurity skill set still being built.</sub>
+  <sub>The part I am still learning. For now that means reading up on how things get broken and not shipping the obvious mistakes.</sub>
 </td>
 </tr>
 </table>
 
 <div align="center">
-  <sub>written up in full at <a href="https://plattnericus.dev"><b>plattnericus.dev</b></a> · pinned repositories below</sub>
+  <sub>More about all of it on <a href="https://plattnericus.dev"><b>plattnericus.dev</b></a>. Repos are pinned right below.</sub>
 </div>
 
 ---
@@ -81,11 +81,15 @@
 
 <div align="center">
 
-### `>` commit history, weaponised
+### `>` space invaders, built from my commits
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/game.gif?v=4" width="100%" alt="GitHub contribution graph as a space shooter"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/commit-invaders-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/commit-invaders.svg">
+  <img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/commit-invaders.svg" width="100%" alt="My contribution graph as a game of Space Invaders"/>
+</picture>
 
-<sub>every contribution is a target — a year of commits, cleared wave by wave</sub>
+<sub>a year of contributions, getting shot at. rebuilds itself every day.</sub>
 
 </div>
 
