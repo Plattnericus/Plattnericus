@@ -70,7 +70,11 @@ taught me more than the coding did.
 &nbsp;
 <img height="28" src="https://img.shields.io/github/last-commit/Plattnericus/Plattnericus?style=flat&color=2b4f81&labelColor=0d1320&label=updated"/>
 
-<br><br>
+<br>
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Plattnericus&hide_border=true&bg_color=00000000&color=6ea8ff&line=2b4f81&point=6ea8ff&area=true&area_color=2b4f81" width="95%" alt="Contribution activity"/>
+
+<br>
 
 <a href="https://github.com/Plattnericus/ThreeJS_Portfolio"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/ThreeJS_Portfolio?style=flat&color=2b4f81&labelColor=0d1320&label=ThreeJS_Portfolio"/></a>
 &nbsp;
