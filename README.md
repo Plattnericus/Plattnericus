@@ -50,9 +50,7 @@ taught me more than the coding did.
 
 ### `</>` stack
 
-<img src="https://skillicons.dev/icons?i=ts,java,react,nextjs,nodejs,flutter,docker,linux,cloudflare" height="44" alt="TypeScript, Java, React, Next.js, Node.js, Flutter, Docker, Linux, Cloudflare"/>
-&nbsp;
-<img height="44" src="https://img.shields.io/badge/-Cisco-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white"/>
+<img src="https://skillicons.dev/icons?i=ts,java,idea,react,nextjs,nodejs,flutter,docker,linux,cloudflare" height="48" alt="TypeScript, Java, IntelliJ IDEA, React, Next.js, Node.js, Flutter, Docker, Linux, Cloudflare"/>
 
 </div>
 
