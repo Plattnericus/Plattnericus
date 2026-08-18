@@ -30,7 +30,7 @@
 
 ```console
 $ whoami
-Nexor, fullstack developer from South Tyrol
+Nexor, fullstack developer
 
 $ currently
 building    POKYH, a school platform that real students use every day
