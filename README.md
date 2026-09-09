@@ -86,7 +86,7 @@ taught me more than the coding did.
 
 ### `>` github commits
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg?v=1" width="100%" alt="GitHub commits, last 12 months"/>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg?v=9214903" width="100%" alt="GitHub commits, last 12 months"/>
 
 </div>
 
