@@ -68,7 +68,7 @@ taught me more than the coding did.
 
 <br><br>
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg?v=5213938" width="100%" alt="GitHub commits, last 12 months"/>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg?v=6214726" width="100%" alt="GitHub commits, last 12 months"/>
 <sub>redraws itself every hour and on every push, committed under my own name · <a href="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg">open the raw SVG</a> to hover a day for the exact count and date</sub>
 
 <br><br>
