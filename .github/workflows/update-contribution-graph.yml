@@ -1,0 +1,52 @@
+name: Update contribution graph
+
+on:
+  schedule:
+    - cron: "0 * * * *"   # stündlich
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-graph
+  cancel-in-progress: false
+
+jobs:
+  update-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Contribution-Graph generieren
+        env:
+          GITHUB_USERNAME: Plattnericus
+        run: node scripts/generate-contribution-graph.mjs
+
+      - name: Cache-Busting-Version in README bumpen
+        run: |
+          RUN_ID="${{ github.run_number }}$(date -u +%H%M%S)"
+          sed -i -E "s#(contribution-graph\.svg\?v=)[^\"]*#\1${RUN_ID}#" README.md
+
+      - name: Änderungen committen & pushen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/contribution-graph.svg README.md
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen – nichts zu committen."
+          else
+            git commit -m "chore: contribution graph aktualisieren"
+            git pull --rebase origin main
+            git push
+          fi
