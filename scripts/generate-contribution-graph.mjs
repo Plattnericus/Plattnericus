@@ -10,18 +10,20 @@ const OUT_FILE = path.join(OUT_DIR, "contribution-graph.svg");
 const CELL = 11;
 const GAP = 3;
 const RADIUS = 2;
-const LEFT_PAD = 44;
-const TOP_PAD = 62;
-const RIGHT_PAD = 22;
-const BOTTOM_PAD = 38;
+const LEFT_PAD = 40;
+const TOP_PAD = 58;
+const RIGHT_PAD = 20;
+const BOTTOM_PAD = 34;
 
-const COLORS = ["#161b29", "#2d2a63", "#4a3f96", "#6650d6", "#8f6bf5"];
+// Exakt die Palette, die im Rest des READMEs schon verwendet wird
+// (Header-Gradient, Badges, Typing-SVG): 0d1320 -> 2b4f81 -> 4a7fc4 -> 6ea8ff.
+const COLORS = ["#161d2c", "#1f3a63", "#2b4f81", "#4a7fc4", "#6ea8ff"];
 const BG = "#0d1320";
 const FG = "#e6edf3";
 const MUTED = "#8790a3";
 
-const WEEKDAY_LABELS = ["Mo", "", "Mi", "", "Fr", "", ""];
-const MONTH_LABELS_DE = ["Jan","Feb","Mär","Apr","Mai","Jun","Jul","Aug","Sep","Okt","Nov","Dez"];
+const WEEKDAY_LABELS = ["Mon", "", "Wed", "", "Fri", "", ""];
+const MONTH_LABELS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function escapeXml(value) {
   return String(value)
@@ -30,11 +32,11 @@ function escapeXml(value) {
     .replace(/>/g, "&gt;");
 }
 
-function germanDate(dateStr) {
+function formatDate(dateStr) {
   const d = new Date(`${dateStr}T00:00:00Z`);
-  return d.toLocaleDateString("de-DE", {
+  return d.toLocaleDateString("en-US", {
     weekday: "short",
-    day: "2-digit",
+    day: "numeric",
     month: "long",
     year: "numeric",
     timeZone: "UTC",
@@ -44,12 +46,16 @@ function germanDate(dateStr) {
 async function fetchContributions() {
   const res = await fetch(API_URL, { headers: { "cache-control": "no-cache" } });
   if (!res.ok) {
-    throw new Error(`Contribution API antwortete mit HTTP ${res.status} für ${USERNAME}`);
+    throw new Error(`Contribution API returned HTTP ${res.status} for ${USERNAME}`);
   }
-  return res.json();
+  const data = await res.json();
+  if (!Array.isArray(data?.contributions) || data.contributions.length === 0) {
+    throw new Error(`Contribution API returned no data for ${USERNAME}`);
+  }
+  return data;
 }
 
-// Baut Wochen-Spalten (Mo–So), exakt wie GitHubs eigener Contribution-Graph,
+// Baut Mo–So-Wochenspalten exakt wie GitHubs eigener Graph,
 // inkl. unvollständiger erster/letzter Spalte.
 function buildColumns(contributions) {
   const columns = [];
@@ -57,7 +63,7 @@ function buildColumns(contributions) {
 
   for (const day of contributions) {
     const date = new Date(`${day.date}T00:00:00Z`);
-    const row = (date.getUTCDay() + 6) % 7; // Mo=0 ... So=6
+    const row = (date.getUTCDay() + 6) % 7; // Mon=0 ... Sun=6
 
     if (col === -1 || row === 0) col += 1;
     columns[col] = columns[col] || [];
@@ -76,7 +82,7 @@ function monthLabelsFor(columns) {
     if (!firstDay) return;
     const month = new Date(`${firstDay.date}T00:00:00Z`).getUTCMonth();
     if (month !== lastMonth) {
-      labels.push({ index: i, label: MONTH_LABELS_DE[month] });
+      labels.push({ index: i, label: MONTH_LABELS[month] });
       lastMonth = month;
     }
   });
@@ -85,12 +91,12 @@ function monthLabelsFor(columns) {
 }
 
 function renderLegend(width, height) {
-  const legendY = height - BOTTOM_PAD + 14;
-  const mehrX = width - RIGHT_PAD;
-  const swatchesRightEdge = mehrX - 34;
+  const legendY = height - BOTTOM_PAD + 12;
+  const moreX = width - RIGHT_PAD;
+  const swatchesRightEdge = moreX - 28;
   const swatchesWidth = COLORS.length * CELL + (COLORS.length - 1) * GAP;
   const swatchesLeftEdge = swatchesRightEdge - swatchesWidth;
-  const wenigerX = swatchesLeftEdge - 8;
+  const lessX = swatchesLeftEdge - 8;
   const textY = legendY + CELL - 2;
 
   const swatches = COLORS.map((color, i) => {
@@ -99,9 +105,9 @@ function renderLegend(width, height) {
   }).join("");
 
   return `
-    <text x="${wenigerX}" y="${textY}" text-anchor="end" font-size="10" fill="${MUTED}">Weniger</text>
+    <text x="${lessX}" y="${textY}" text-anchor="end" font-size="10" fill="${MUTED}">Less</text>
     ${swatches}
-    <text x="${mehrX}" y="${textY}" text-anchor="end" font-size="10" fill="${MUTED}">Mehr</text>`;
+    <text x="${moreX}" y="${textY}" text-anchor="end" font-size="10" fill="${MUTED}">More</text>`;
 }
 
 function renderSvg({ contributions, total }) {
@@ -116,9 +122,9 @@ function renderSvg({ contributions, total }) {
       const x = LEFT_PAD + colIndex * (CELL + GAP);
       const y = TOP_PAD + row * (CELL + GAP);
       const color = COLORS[day.level] ?? COLORS[0];
-      const unit = day.count === 1 ? "Beitrag" : "Beiträge";
+      const unit = day.count === 1 ? "commit" : "commits";
       cells.push(
-        `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="${RADIUS}" fill="${color}"><title>${escapeXml(`${day.count} ${unit} · ${germanDate(day.date)}`)}</title></rect>`
+        `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="${RADIUS}" fill="${color}"><title>${escapeXml(`${day.count} ${unit} on ${formatDate(day.date)}`)}</title></rect>`
       );
     });
   });
@@ -134,20 +140,14 @@ function renderSvg({ contributions, total }) {
     .map((label, row) => {
       if (!label) return "";
       const y = TOP_PAD + row * (CELL + GAP) + CELL - 2;
-      return `<text x="${LEFT_PAD - 10}" y="${y}" text-anchor="end" font-size="10" fill="${MUTED}">${label}</text>`;
+      return `<text x="${LEFT_PAD - 8}" y="${y}" text-anchor="end" font-size="10" fill="${MUTED}">${label}</text>`;
     })
     .join("");
 
-  return `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Code', ui-monospace, SFMono-Regular, monospace" role="img" aria-label="${escapeXml(`GitHub-Aktivität von ${USERNAME}: ${total} Beiträge im letzten Jahr`)}">
-  <defs>
-    <pattern id="hex" width="26" height="22" patternUnits="userSpaceOnUse">
-      <path d="M13 0 L26 6.5 L26 15.5 L13 22 L0 15.5 L0 6.5 Z" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1"/>
-    </pattern>
-  </defs>
+  return `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Code', ui-monospace, SFMono-Regular, monospace" role="img" aria-label="${escapeXml(`GitHub commits by ${USERNAME}: ${total} in the last year`)}">
   <rect width="${width}" height="${height}" rx="14" fill="${BG}"/>
-  <rect width="${width}" height="${height}" rx="14" fill="url(#hex)"/>
-  <text x="24" y="30" font-size="17" font-weight="600" fill="${FG}">GitHub-Aktivität</text>
-  <text x="${width - RIGHT_PAD}" y="30" text-anchor="end" font-size="13" fill="${MUTED}">${total.toLocaleString("de-DE")} Beiträge im letzten Jahr</text>
+  <text x="20" y="27" font-size="16" font-weight="600" fill="${FG}">GitHub Commits</text>
+  <text x="${width - RIGHT_PAD}" y="27" text-anchor="end" font-size="12" fill="${MUTED}">${total.toLocaleString("en-US")} in the last year</text>
   ${monthLabels}
   ${weekdayLabels}
   ${cells.join("")}
@@ -162,10 +162,10 @@ async function main() {
 
   await mkdir(OUT_DIR, { recursive: true });
   await writeFile(OUT_FILE, svg, "utf8");
-  console.log(`✓ ${OUT_FILE} geschrieben — ${data.contributions.length} Tage, ${total} Beiträge`);
+  console.log(`✓ Wrote ${OUT_FILE} — ${data.contributions.length} days, ${total} commits`);
 }
 
 main().catch((err) => {
-  console.error("✗ Contribution-Graph-Generierung fehlgeschlagen:", err);
+  console.error("✗ Contribution graph generation failed:", err.message);
   process.exit(1);
 });
