@@ -68,8 +68,7 @@ taught me more than the coding did.
 
 <br><br>
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg?v=7214758" width="100%" alt="GitHub commits, last 12 months"/>
-<sub>redraws itself every hour and on every push, committed under my own name · <a href="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg">open the raw SVG</a> to hover a day for the exact count and date</sub>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/activity-graph.svg?v=1" width="95%" alt="Commit activity, last 30 days"/>
 
 <br><br>
 
@@ -85,10 +84,9 @@ taught me more than the coding did.
 
 <div align="center">
 
-### `>` space invaders, built from my commits
+### `>` github commits
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/game.png?v=7" width="100%" alt="My contribution graph as a space shooter"/>
-<sub>a year of contributions, getting shot at. rebuilds itself every day.</sub>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg?v=1" width="100%" alt="GitHub commits, last 12 months"/>
 
 </div>
 
