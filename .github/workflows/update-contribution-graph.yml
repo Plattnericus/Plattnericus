@@ -38,15 +38,15 @@ jobs:
           RUN_ID="${{ github.run_number }}$(date -u +%H%M%S)"
           sed -i -E "s#(contribution-graph\.svg\?v=)[^\"]*#\1${RUN_ID}#" README.md
 
-      - name: Änderungen committen & pushen
+      - name: Änderungen als Plattnericus committen & pushen
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Plattnericus"
+          git config user.email "felix.plattner312009@outlook.de"
           git add assets/contribution-graph.svg README.md
           if git diff --cached --quiet; then
             echo "Keine Änderungen – nichts zu committen."
           else
-            git commit -m "chore: contribution graph aktualisieren"
+            git commit -m "chore: update contribution graph"
             git pull --rebase origin main
             git push
           fi
