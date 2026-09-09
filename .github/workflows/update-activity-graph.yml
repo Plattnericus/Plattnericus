@@ -1,0 +1,52 @@
+name: Update activity graph
+
+on:
+  schedule:
+    - cron: "15 2 * * *"   # täglich um 02:15 UTC = 03:15 Uhr in Südtirol (CET) — 15 Min. versetzt zum Contribution-Graph-Workflow, damit beide nicht gleichzeitig committen
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: activity-graph
+  cancel-in-progress: false
+
+jobs:
+  update-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Activity-Graph generieren
+        env:
+          GITHUB_USERNAME: Plattnericus
+        run: node scripts/generate-activity-graph.mjs
+
+      - name: Cache-Busting-Version in README bumpen
+        run: |
+          RUN_ID="${{ github.run_number }}$(date -u +%H%M%S)"
+          sed -i -E "s#(activity-graph\.svg\?v=)[^\"]*#\1${RUN_ID}#" README.md
+
+      - name: Änderungen als Plattnericus committen & pushen
+        run: |
+          git config user.name "Plattnericus"
+          git config user.email "felix.plattner312009@outlook.de"
+          git add assets/activity-graph.svg README.md
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen – nichts zu committen."
+          else
+            git commit -m "chore: update activity graph"
+            git pull --rebase origin main
+            git push
+          fi
