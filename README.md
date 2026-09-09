@@ -66,11 +66,12 @@ taught me more than the coding did.
 &nbsp;
 <img height="28" src="https://img.shields.io/github/last-commit/Plattnericus/Plattnericus?style=flat&color=2b4f81&labelColor=0d1320&label=updated"/>
 
-<br>
+<br><br>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Plattnericus&hide_border=true&bg_color=00000000&color=6ea8ff&line=2b4f81&point=6ea8ff&area=true&area_color=2b4f81" width="95%" alt="Contribution activity"/>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg?v=1" width="100%" alt="GitHub commits, last 12 months"/>
+<sub>redraws itself every hour and on every push, committed under my own name · <a href="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg">open the raw SVG</a> to hover a day for the exact count and date</sub>
 
-<br>
+<br><br>
 
 <a href="https://github.com/Plattnericus/ThreeJS_Portfolio"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/ThreeJS_Portfolio?style=flat&color=2b4f81&labelColor=0d1320&label=ThreeJS_Portfolio"/></a>
 &nbsp;
@@ -84,10 +85,10 @@ taught me more than the coding did.
 
 <div align="center">
 
-### `>` github activity, always current
+### `>` space invaders, built from my commits
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg?v=4213914" width="100%" alt="GitHub-Aktivität: Beiträge der letzten 12 Monate"/>
-<sub>redraws itself every hour and on every push · <a href="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg">open the raw SVG</a> and hover any day for the exact count and date.</sub>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/game.png?v=7" width="100%" alt="My contribution graph as a space shooter"/>
+<sub>a year of contributions, getting shot at. rebuilds itself every day.</sub>
 
 </div>
 
