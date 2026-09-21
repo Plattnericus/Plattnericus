@@ -68,7 +68,7 @@ taught me more than the coding did.
 
 <br><br>
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/activity-graph.svg?v=13074405" width="95%" alt="Commit activity, last 30 days"/>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/activity-graph.svg?v=14075702" width="95%" alt="Commit activity, last 30 days"/>
 
 <br><br>
 
