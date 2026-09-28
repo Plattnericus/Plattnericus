@@ -1,59 +1,27 @@
-import { writeFile, mkdir } from "node:fs/promises";
-import path from "node:path";
-
-const USERNAME = process.env.GITHUB_USERNAME || "Plattnericus";
-const API_URL = `https://github-contributions-api.jogruber.de/v4/${USERNAME}?y=last`;
-
-const OUT_DIR = "assets";
-const OUT_FILE = path.join(OUT_DIR, "contribution-graph.svg");
+import {
+  THEME,
+  CARD_WIDTH,
+  USERNAME,
+  escapeXml,
+  formatCount,
+  fullDate,
+  fetchContributions,
+  renderCard,
+  writeSvg,
+} from "./theme.mjs";
 
 const CELL = 11;
 const GAP = 3;
+const STEP = CELL + GAP;
 const RADIUS = 2;
-const LEFT_PAD = 40;
-const TOP_PAD = 58;
-const RIGHT_PAD = 20;
-const BOTTOM_PAD = 34;
-
-// Exakt die Palette, die im Rest des READMEs schon verwendet wird
-// (Header-Gradient, Badges, Typing-SVG): 0d1320 -> 2b4f81 -> 4a7fc4 -> 6ea8ff.
-const COLORS = ["#161d2c", "#1f3a63", "#2b4f81", "#4a7fc4", "#6ea8ff"];
-const BG = "#0d1320";
-const FG = "#e6edf3";
-const MUTED = "#8790a3";
+const WEEKDAY_LABEL_WIDTH = 30;
+const TOP_PAD = 66;
+const BOTTOM_PAD = 38;
+const WIDTH = CARD_WIDTH;
 
 const WEEKDAY_LABELS = ["Mon", "", "Wed", "", "Fri", "", ""];
 const MONTH_LABELS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-function escapeXml(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
-
-function formatDate(dateStr) {
-  const d = new Date(`${dateStr}T00:00:00Z`);
-  return d.toLocaleDateString("en-US", {
-    weekday: "short",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  });
-}
-
-async function fetchContributions() {
-  const res = await fetch(API_URL, { headers: { "cache-control": "no-cache" } });
-  if (!res.ok) {
-    throw new Error(`Contribution API returned HTTP ${res.status} for ${USERNAME}`);
-  }
-  const data = await res.json();
-  if (!Array.isArray(data?.contributions) || data.contributions.length === 0) {
-    throw new Error(`Contribution API returned no data for ${USERNAME}`);
-  }
-  return data;
-}
+const MIN_MONTH_GAP = 3; // Spalten Abstand, damit sich Monatsnamen nicht überlappen
 
 // Baut Mo–So-Wochenspalten exakt wie GitHubs eigener Graph,
 // inkl. unvollständiger erster/letzter Spalte.
@@ -87,82 +55,78 @@ function monthLabelsFor(columns) {
     }
   });
 
+  // Angeschnittener erster Monat: Label weglassen, wenn der nächste zu nah kommt
+  if (labels.length > 1 && labels[1].index - labels[0].index < MIN_MONTH_GAP) labels.shift();
   return labels;
 }
 
-function renderLegend(width, height) {
-  const legendY = height - BOTTOM_PAD + 12;
-  const moreX = width - RIGHT_PAD;
-  const swatchesRightEdge = moreX - 28;
-  const swatchesWidth = COLORS.length * CELL + (COLORS.length - 1) * GAP;
-  const swatchesLeftEdge = swatchesRightEdge - swatchesWidth;
-  const lessX = swatchesLeftEdge - 8;
+function renderLegend(gridRight, legendY) {
   const textY = legendY + CELL - 2;
+  const moreWidth = 28;
+  const swatchesRight = gridRight - moreWidth;
+  const swatchesLeft = swatchesRight - (THEME.levels.length * STEP - GAP);
 
-  const swatches = COLORS.map((color, i) => {
-    const x = swatchesLeftEdge + i * (CELL + GAP);
-    return `<rect x="${x}" y="${legendY}" width="${CELL}" height="${CELL}" rx="${RADIUS}" fill="${color}"/>`;
-  }).join("");
+  const swatches = THEME.levels
+    .map((color, i) => `<rect x="${swatchesLeft + i * STEP}" y="${legendY}" width="${CELL}" height="${CELL}" rx="${RADIUS}" fill="${color}"/>`)
+    .join("");
 
-  return `
-    <text x="${lessX}" y="${textY}" text-anchor="end" font-size="10" fill="${MUTED}">Less</text>
-    ${swatches}
-    <text x="${moreX}" y="${textY}" text-anchor="end" font-size="10" fill="${MUTED}">More</text>`;
+  return `<text x="${swatchesLeft - 8}" y="${textY}" text-anchor="end" font-size="10" fill="${THEME.muted}">Less</text>
+  ${swatches}
+  <text x="${gridRight}" y="${textY}" text-anchor="end" font-size="10" fill="${THEME.muted}">More</text>`;
 }
 
 function renderSvg({ contributions, total }) {
   const columns = buildColumns(contributions);
-  const width = LEFT_PAD + columns.length * (CELL + GAP) - GAP + RIGHT_PAD;
-  const height = TOP_PAD + 7 * (CELL + GAP) - GAP + BOTTOM_PAD;
+  const gridWidth = columns.length * STEP - GAP;
+  const gridHeight = 7 * STEP - GAP;
+  // Wochentage + Raster zusammen horizontal zentrieren
+  const gridLeft = Math.round((WIDTH - WEEKDAY_LABEL_WIDTH - gridWidth) / 2) + WEEKDAY_LABEL_WIDTH;
+  const gridRight = gridLeft + gridWidth;
+  const height = TOP_PAD + gridHeight + BOTTOM_PAD;
 
   const cells = [];
   columns.forEach((col, colIndex) => {
     col.forEach((day, row) => {
       if (!day) return;
-      const x = LEFT_PAD + colIndex * (CELL + GAP);
-      const y = TOP_PAD + row * (CELL + GAP);
-      const color = COLORS[day.level] ?? COLORS[0];
-      const unit = day.count === 1 ? "commit" : "commits";
+      const x = gridLeft + colIndex * STEP;
+      const y = TOP_PAD + row * STEP;
+      const color = THEME.levels[day.level] ?? THEME.levels[0];
       cells.push(
-        `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="${RADIUS}" fill="${color}"><title>${escapeXml(`${day.count} ${unit} on ${formatDate(day.date)}`)}</title></rect>`
+        `<rect x="${x}" y="${y}" width="${CELL}" height="${CELL}" rx="${RADIUS}" fill="${color}"><title>${escapeXml(`${formatCount(day.count)} on ${fullDate(day.date)}`)}</title></rect>`
       );
     });
   });
 
   const monthLabels = monthLabelsFor(columns)
-    .map(({ index, label }) => {
-      const x = LEFT_PAD + index * (CELL + GAP);
-      return `<text x="${x}" y="${TOP_PAD - 10}" font-size="11" fill="${MUTED}">${label}</text>`;
-    })
+    .map(({ index, label }) => `<text x="${gridLeft + index * STEP}" y="${TOP_PAD - 9}" font-size="11" fill="${THEME.muted}">${label}</text>`)
     .join("");
 
   const weekdayLabels = WEEKDAY_LABELS
     .map((label, row) => {
       if (!label) return "";
-      const y = TOP_PAD + row * (CELL + GAP) + CELL - 2;
-      return `<text x="${LEFT_PAD - 8}" y="${y}" text-anchor="end" font-size="10" fill="${MUTED}">${label}</text>`;
+      const y = TOP_PAD + row * STEP + CELL - 2;
+      return `<text x="${gridLeft - 8}" y="${y}" text-anchor="end" font-size="10" fill="${THEME.muted}">${label}</text>`;
     })
     .join("");
 
-  return `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Code', ui-monospace, SFMono-Regular, monospace" role="img" aria-label="${escapeXml(`GitHub commits by ${USERNAME}: ${total} in the last year`)}">
-  <rect width="${width}" height="${height}" rx="14" fill="${BG}"/>
-  <text x="20" y="27" font-size="16" font-weight="600" fill="${FG}">GitHub Commits</text>
-  <text x="${width - RIGHT_PAD}" y="27" text-anchor="end" font-size="12" fill="${MUTED}">${total.toLocaleString("en-US")} in the last year</text>
-  ${monthLabels}
+  return renderCard({
+    width: WIDTH,
+    height,
+    label: `GitHub contributions by ${USERNAME}: ${formatCount(total)} in the last year`,
+    title: "Contributions",
+    meta: `${total.toLocaleString("en-US")} in the last year`,
+    body: `${monthLabels}
   ${weekdayLabels}
   ${cells.join("")}
-  ${renderLegend(width, height)}
-</svg>`;
+  ${renderLegend(gridRight, TOP_PAD + gridHeight + 14)}`,
+  });
 }
 
 async function main() {
   const data = await fetchContributions();
   const total = data.total?.lastYear ?? data.contributions.reduce((sum, d) => sum + d.count, 0);
-  const svg = renderSvg({ contributions: data.contributions, total });
-
-  await mkdir(OUT_DIR, { recursive: true });
-  await writeFile(OUT_FILE, svg, "utf8");
-  console.log(`✓ Wrote ${OUT_FILE} — ${data.contributions.length} days, ${total} commits`);
+  const outFile = await writeSvg("contribution-graph.svg", renderSvg({ contributions: data.contributions, total }));
+  console.log(`✓ Wrote ${outFile} — ${data.contributions.length} days, ${total} contributions`);
 }
 
 main().catch((err) => {

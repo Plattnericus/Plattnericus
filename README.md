@@ -12,11 +12,11 @@
 
 <br><br>
 
-<a href="https://plattnericus.dev"><img height="28" src="https://img.shields.io/badge/plattnericus.dev-b0644a?style=flat&logo=vercel&logoColor=f2ede6&labelColor=120d0a"/></a>
+<a href="https://plattnericus.dev"><img height="28" src="https://img.shields.io/badge/plattnericus.dev-d97757?style=flat&logo=vercel&logoColor=f2ede6&labelColor=0b0908"/></a>
 &nbsp;
-<a href="mailto:felix.plattner89@icloud.com"><img height="28" src="https://img.shields.io/badge/contact-b0644a?style=flat&logo=maildotru&logoColor=f2ede6&labelColor=120d0a"/></a>
+<a href="mailto:felix.plattner89@icloud.com"><img height="28" src="https://img.shields.io/badge/contact-d97757?style=flat&logo=maildotru&logoColor=f2ede6&labelColor=0b0908"/></a>
 &nbsp;
-<a href="https://github.com/Plattnericus?tab=repositories"><img height="28" src="https://img.shields.io/badge/repositories-b0644a?style=flat&logo=github&logoColor=f2ede6&labelColor=120d0a"/></a>
+<a href="https://github.com/Plattnericus?tab=repositories"><img height="28" src="https://img.shields.io/badge/repositories-d97757?style=flat&logo=github&logoColor=f2ede6&labelColor=0b0908"/></a>
 
 </div>
 
@@ -60,11 +60,11 @@ taught me more than the coding did.
 
 ### `#` stats
 
-<img height="28" src="https://komarev.com/ghpvc/?username=Plattnericus&style=flat&color=b0644a&label=profile+views"/>
+<img height="28" src="https://komarev.com/ghpvc/?username=Plattnericus&style=flat&color=d97757&label=profile+views"/>
 &nbsp;
-<img height="28" src="https://img.shields.io/github/followers/Plattnericus?style=flat&color=b0644a&labelColor=120d0a&label=followers"/>
+<img height="28" src="https://img.shields.io/github/followers/Plattnericus?style=flat&color=d97757&labelColor=0b0908&label=followers"/>
 &nbsp;
-<img height="28" src="https://img.shields.io/github/last-commit/Plattnericus/Plattnericus?style=flat&color=b0644a&labelColor=120d0a&label=updated"/>
+<img height="28" src="https://img.shields.io/github/last-commit/Plattnericus/Plattnericus?style=flat&color=d97757&labelColor=0b0908&label=updated"/>
 
 <br><br>
 
@@ -72,11 +72,11 @@ taught me more than the coding did.
 
 <br><br>
 
-<a href="https://github.com/Plattnericus/ThreeJS_Portfolio"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/ThreeJS_Portfolio?style=flat&color=b0644a&labelColor=120d0a&label=ThreeJS_Portfolio"/></a>
+<a href="https://github.com/Plattnericus/ThreeJS_Portfolio"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/ThreeJS_Portfolio?style=flat&color=d97757&labelColor=0b0908&label=ThreeJS_Portfolio"/></a>
 &nbsp;
-<a href="https://github.com/Plattnericus/StreamDeck"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/StreamDeck?style=flat&color=b0644a&labelColor=120d0a&label=StreamDeck"/></a>
+<a href="https://github.com/Plattnericus/StreamDeck"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/StreamDeck?style=flat&color=d97757&labelColor=0b0908&label=StreamDeck"/></a>
 &nbsp;
-<a href="https://github.com/bedchem/POKYH"><img height="28" src="https://img.shields.io/github/stars/bedchem/POKYH?style=flat&color=b0644a&labelColor=120d0a&label=POKYH"/></a>
+<a href="https://github.com/bedchem/POKYH"><img height="28" src="https://img.shields.io/github/stars/bedchem/POKYH?style=flat&color=d97757&labelColor=0b0908&label=POKYH"/></a>
 
 </div>
 
