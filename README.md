@@ -1,22 +1,22 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1320,100:2b4f81&height=180&section=header&text=Plattnericus&fontColor=e6edf3&fontSize=52&animation=fadeIn&fontAlignY=38" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b0908,55:a63d22,100:d97757&height=180&section=header&text=Plattnericus&fontColor=f2ede6&fontSize=52&animation=fadeIn&fontAlignY=38" width="100%"/>
 
 <img src="https://wsrv.nl/?url=github.com/Plattnericus.png&w=280&h=280&fit=cover&mask=circle" width="150" alt="Plattnericus"/>
 
 ### `Nexor` · build. deploy. secure.
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=4A7FC4&center=true&vCenter=true&width=650&height=38&lines=fullstack+developer+%E2%80%A2+south+tyrol;next.js+%C2%B7+typescript+%C2%B7+three.js;docker+%C2%B7+linux+%C2%B7+cloudflare+%C2%B7+selfhosting;devops+and+security+in+the+making;build.+deploy.+secure.;node.js+%C2%B7+react+%C2%B7+flutter;fullstack+developer+%E2%80%A2+student;shipping+POKYH+one+commit+at+a+time;self-hosting+everything+I+can;always+learning%2C+always+breaking+things" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1000&color=D97757&center=true&vCenter=true&width=650&height=38&lines=fullstack+developer+%E2%80%A2+south+tyrol;next.js+%C2%B7+typescript+%C2%B7+three.js;docker+%C2%B7+linux+%C2%B7+cloudflare+%C2%B7+selfhosting;devops+and+security+in+the+making;build.+deploy.+secure.;node.js+%C2%B7+react+%C2%B7+flutter;fullstack+developer+%E2%80%A2+student;shipping+POKYH+one+commit+at+a+time;self-hosting+everything+I+can;always+learning%2C+always+breaking+things" alt="Typing SVG"/>
 </a>
 
 <br><br>
 
-<a href="https://plattnericus.dev"><img height="28" src="https://img.shields.io/badge/plattnericus.dev-2b4f81?style=flat&logo=vercel&logoColor=white&labelColor=0d1320"/></a>
+<a href="https://plattnericus.dev"><img height="28" src="https://img.shields.io/badge/plattnericus.dev-b0644a?style=flat&logo=vercel&logoColor=f2ede6&labelColor=120d0a"/></a>
 &nbsp;
-<a href="mailto:felix.plattner89@icloud.com"><img height="28" src="https://img.shields.io/badge/contact-2b4f81?style=flat&logo=maildotru&logoColor=white&labelColor=0d1320"/></a>
+<a href="mailto:felix.plattner89@icloud.com"><img height="28" src="https://img.shields.io/badge/contact-b0644a?style=flat&logo=maildotru&logoColor=f2ede6&labelColor=120d0a"/></a>
 &nbsp;
-<a href="https://github.com/Plattnericus?tab=repositories"><img height="28" src="https://img.shields.io/badge/repositories-2b4f81?style=flat&logo=github&logoColor=white&labelColor=0d1320"/></a>
+<a href="https://github.com/Plattnericus?tab=repositories"><img height="28" src="https://img.shields.io/badge/repositories-b0644a?style=flat&logo=github&logoColor=f2ede6&labelColor=120d0a"/></a>
 
 </div>
 
@@ -60,11 +60,11 @@ taught me more than the coding did.
 
 ### `#` stats
 
-<img height="28" src="https://komarev.com/ghpvc/?username=Plattnericus&style=flat&color=2b4f81&label=profile+views"/>
+<img height="28" src="https://komarev.com/ghpvc/?username=Plattnericus&style=flat&color=b0644a&label=profile+views"/>
 &nbsp;
-<img height="28" src="https://img.shields.io/github/followers/Plattnericus?style=flat&color=2b4f81&labelColor=0d1320&label=followers"/>
+<img height="28" src="https://img.shields.io/github/followers/Plattnericus?style=flat&color=b0644a&labelColor=120d0a&label=followers"/>
 &nbsp;
-<img height="28" src="https://img.shields.io/github/last-commit/Plattnericus/Plattnericus?style=flat&color=2b4f81&labelColor=0d1320&label=updated"/>
+<img height="28" src="https://img.shields.io/github/last-commit/Plattnericus/Plattnericus?style=flat&color=b0644a&labelColor=120d0a&label=updated"/>
 
 <br><br>
 
@@ -72,11 +72,11 @@ taught me more than the coding did.
 
 <br><br>
 
-<a href="https://github.com/Plattnericus/ThreeJS_Portfolio"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/ThreeJS_Portfolio?style=flat&color=2b4f81&labelColor=0d1320&label=ThreeJS_Portfolio"/></a>
+<a href="https://github.com/Plattnericus/ThreeJS_Portfolio"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/ThreeJS_Portfolio?style=flat&color=b0644a&labelColor=120d0a&label=ThreeJS_Portfolio"/></a>
 &nbsp;
-<a href="https://github.com/Plattnericus/StreamDeck"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/StreamDeck?style=flat&color=2b4f81&labelColor=0d1320&label=StreamDeck"/></a>
+<a href="https://github.com/Plattnericus/StreamDeck"><img height="28" src="https://img.shields.io/github/stars/Plattnericus/StreamDeck?style=flat&color=b0644a&labelColor=120d0a&label=StreamDeck"/></a>
 &nbsp;
-<a href="https://github.com/bedchem/POKYH"><img height="28" src="https://img.shields.io/github/stars/bedchem/POKYH?style=flat&color=2b4f81&labelColor=0d1320&label=POKYH"/></a>
+<a href="https://github.com/bedchem/POKYH"><img height="28" src="https://img.shields.io/github/stars/bedchem/POKYH?style=flat&color=b0644a&labelColor=120d0a&label=POKYH"/></a>
 
 </div>
 
@@ -90,4 +90,4 @@ taught me more than the coding did.
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2b4f81,100:0d1320&height=120&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:d97757,45:a63d22,100:0b0908&height=120&section=footer" width="100%"/>
