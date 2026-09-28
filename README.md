@@ -68,7 +68,7 @@ taught me more than the coding did.
 
 <br><br>
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/activity-graph.svg?v=23130744" width="95%" alt="Commit activity, last 30 days"/>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/activity-graph.svg" width="100%" alt="Contribution activity, last 30 days"/>
 
 <br><br>
 
@@ -84,9 +84,9 @@ taught me more than the coding did.
 
 <div align="center">
 
-### `>` github commits
+### `>` contributions
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/main/assets/contribution-graph.svg?v=119130754" width="100%" alt="GitHub commits, last 12 months"/>
+<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/contribution-graph.svg" width="100%" alt="GitHub contributions, last 12 months"/>
 
 </div>
 
