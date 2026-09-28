@@ -26,22 +26,10 @@
 
 ### `~` currently
 
-</div>
+<a href="https://plattnericus.dev"><img src="https://plattnericus.github.io/Plattnericus/terminal.svg" width="100%" alt="$ whoami: Nexor, fullstack developer. $ currently: building POKYH, a school platform that real students use every day; running self-hosted infrastructure on Docker and Linux; learning security, properly this time. $ why: The half where you have to run the thing yourself taught me more than the coding did."/></a>
 
-```console
-$ whoami
-Nexor, fullstack developer
-$ currently
-building    POKYH, a school platform that real students use every day
-running     self-hosted infrastructure on Docker and Linux
-learning    security, properly this time
-$ why
-The half where you have to run the thing yourself
-taught me more than the coding did.
-```
+<sub>More about all of it on <b>plattnericus.dev</b>. Repos are pinned right below.</sub>
 
-<div align="center">
-<sub>More about all of it on <a href="https://plattnericus.dev"><b>plattnericus.dev</b></a>. Repos are pinned right below.</sub>
 </div>
 
 ---
@@ -68,7 +56,7 @@ taught me more than the coding did.
 
 <br><br>
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/activity-graph.svg" width="100%" alt="Contribution activity, last 30 days"/>
+<img src="https://plattnericus.github.io/Plattnericus/activity-graph.svg" width="100%" alt="Contribution activity, last 30 days"/>
 
 <br><br>
 
@@ -86,7 +74,7 @@ taught me more than the coding did.
 
 ### `>` contributions
 
-<img src="https://raw.githubusercontent.com/Plattnericus/Plattnericus/output/contribution-graph.svg" width="100%" alt="GitHub contributions, last 12 months"/>
+<img src="https://plattnericus.github.io/Plattnericus/contribution-graph.svg" width="100%" alt="GitHub contributions, last 12 months"/>
 
 </div>
 

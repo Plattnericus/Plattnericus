@@ -1,9 +1,8 @@
 name: Profile assets
 
 # Erzeugt Contribution-Graph, Activity-Graph und das Space-Shooter-GIF und
-# veröffentlicht sie auf dem Branch `output`. Committet wird als
-# github-actions[bot]: Die Updates zählen nicht zu den eigenen Contributions,
-# und `main` bleibt frei von automatischen Commits.
+# veröffentlicht sie über GitHub Pages. Dabei entsteht kein einziger Commit:
+# Die Bilder im README werden einfach ersetzt und zählen nicht zu den Contributions.
 
 on:
   schedule:
@@ -15,20 +14,19 @@ on:
       - ".github/workflows/profile-assets.yml"
   workflow_dispatch: {}
 
-permissions:
-  contents: write
+permissions: {}
 
 concurrency:
-  group: profile-assets
+  group: pages
   cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    env:
-      GITHUB_USERNAME: ${{ github.repository_owner }}
-      OUT_DIR: dist
+    permissions:
+      contents: read
+      actions: write   # nur für den Keepalive-Schritt
     steps:
       - uses: actions/checkout@v5
         with:
@@ -38,58 +36,41 @@ jobs:
         with:
           node-version: 24
 
-      # Schlägt ein Schritt fehl, bleibt auf `output` die letzte funktionierende Version stehen
-      - name: Contribution graph
-        continue-on-error: true
-        run: node scripts/generate-contribution-graph.mjs
-
-      - name: Activity graph
-        continue-on-error: true
-        run: node scripts/generate-activity-graph.mjs
-
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Space shooter
+      - name: Install gh-space-shooter
+        continue-on-error: true
+        run: pip install --quiet gh-space-shooter
+
+      - name: Build assets
+        env:
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/build.sh
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+      # Ohne Commits würde GitHub den Zeitplan nach 60 Tagen Inaktivität pausieren
+      - name: Keep schedule alive
+        if: github.event_name == 'schedule'
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pip install --quiet gh-space-shooter
-          mkdir -p "$OUT_DIR"
-          gh-space-shooter "$GITHUB_USERNAME" --output "$OUT_DIR/game.gif" --strategy random --fps 30
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/profile-assets.yml/enable"
 
-      - name: Publish to output branch
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mkdir -p "$OUT_DIR" && cd "$OUT_DIR"
-          git init -q -b output
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-
-          has_previous=false
-          git fetch -q --depth=1 origin output 2>/dev/null && has_previous=true
-
-          if $has_previous; then
-            for f in contribution-graph.svg activity-graph.svg game.gif; do
-              [ -s "$f" ] || git checkout -q FETCH_HEAD -- "$f" 2>/dev/null || true
-            done
-          fi
-
-          git add -A
-          if [ -z "$(git ls-files)" ]; then
-            echo "::error::Keine Grafiken erzeugt."
-            exit 1
-          fi
-          git commit -q -m "Update profile assets"
-
-          if $has_previous && [ "$(git rev-parse 'HEAD^{tree}')" = "$(git rev-parse 'FETCH_HEAD^{tree}')" ]; then
-            echo "Keine Änderungen."
-            exit 0
-          fi
-
-          # Immer genau ein Commit auf `output`, keine wachsende History
-          git push -q -f origin output
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
